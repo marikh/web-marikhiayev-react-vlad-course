@@ -1,0 +1,4 @@
+.submitted-notification:before {
+    content: 'Submitted successfuly';
+    color: green
+}

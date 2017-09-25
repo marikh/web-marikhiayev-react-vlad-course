@@ -1,0 +1,4 @@
+{
+  "welcome": "Home page {myName}. {{howAreYou}} ?",
+  "howAreYou": "How are you"
+}

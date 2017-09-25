@@ -1,0 +1,31 @@
+{
+  "name": "step0-base",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "enzyme": "^2.9.1",
+    "font-awesome": "^4.7.0",
+    "i18n-react": "^0.4.0",
+    "normalize.css": "^7.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^15.6.1",
+    "react-transition-group": "^2.2.0",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.3.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --verbose --coverage",
+    "eject": "react-scripts eject"
+  }
+}
