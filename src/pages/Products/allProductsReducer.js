@@ -52,13 +52,7 @@ export default (state = INITIAL_STATE, action) => {
     case productsActionTypes.ADD_PRODUCT:
       return [
         ...state,
-        {
-          id: action.newProduct.id,
-          name: action.newProduct.name,
-          imageUrl: action.newProduct.imageUrl,
-          shortDesc: action.newProduct.shortDesc,
-          price: action.newProduct.price
-        }
+        action.newProduct
       ]
 
     case productsActionTypes.DELETE_PRODUCT:
