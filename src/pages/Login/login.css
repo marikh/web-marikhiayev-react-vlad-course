@@ -1,0 +1,4 @@
+.login-failed-notification:before {
+    content: 'Login Failed';
+    color: red
+}

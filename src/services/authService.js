@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 
 const checkAuth = (WrappedComponent) => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return ({ match }) => (
     isAuthenticated ? 

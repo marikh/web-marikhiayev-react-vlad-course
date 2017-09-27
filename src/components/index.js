@@ -9,7 +9,6 @@ import Section from './Section/';
 import Card from './Card/';
 import Menu from './Menu/';
 import InputField from './InputField/';
-import Form from './Form/';
 
 export {
     Layout,
@@ -22,6 +21,5 @@ export {
     Section,
     Card,
     Menu,
-    InputField,
-    Form
+    InputField
 }

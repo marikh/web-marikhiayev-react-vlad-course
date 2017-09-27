@@ -4,6 +4,7 @@ const user = "Marik";
 const password = "M";
 
 class loginService{
+
     constructor(){
 
       if(!instance){
@@ -16,7 +17,10 @@ class loginService{
     }
 
     login(username,pass){
-        if(username.toLowerCase() === user.toLowerCase() && this.pass === password){
+        if(!username || !pass)
+            return false;
+
+        if(username.toLowerCase() === user.toLowerCase() && pass === password){
             this.loggedInUser = user;
             this.loggedIn = true;
             return true;

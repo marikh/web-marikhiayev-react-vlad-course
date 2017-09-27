@@ -2,36 +2,35 @@ import React from 'react';
 import classNames from 'classnames';
 import './inputfield.css';
 import { Prompt } from 'react-router-dom';
+import { omit } from 'lodash';
 
 export default class InputField extends React.Component {
-    
-    state = {
-        value: ''
-    }
 
-    changeText = (value) => this.setState({ value });
+    changeText = (name, value) => {
+        this.props.updateForm && this.props.updateForm(name, value);
+    }
     
-    onBlur = (value) => this.props.updateForm && this.props.updateForm(this.state.value);
+    // bugggggy event ---> if I press enter (submit) while still on focus on this input field, form submitted with old value
+    //onBlur = (value) => this.props.updateForm && this.props.updateForm(this.props.name, this.state.value);
 
     render(){
+        
         const inputProps = {
-            value: this.state.value,
-            onChange: ({ target: { value }}) => this.changeText(value)
+            name: this.props.name, 
+            label: this.props.label, 
+            type: this.props.type, 
+            value: this.props.value, 
+            required: this.props.required,
+            onChange: ({ target: { name, value }}) => this.changeText(name, value)
         }
+        
         return (
-            <div className={classNames(["input-field", this.state.value && "form-dirty"])}  onBlur={() => this.onBlur()}>
+            <div className={classNames(["input-field", this.props.value && "form-dirty"])}>
                 { this.props.type === 'textarea' ? 
                     <textarea { ...inputProps } /> :
                     <input type={this.props.type} {...inputProps} />
                 }
-                <label>{this.props.name}</label>
-                <Prompt
-                    when={this.state.value !== ''}
-                    message={location => (
-                        `Are you sure you want to go to 
-                            ${location.pathname} without submitting the form?`
-                    )}
-                />
+                <label>{this.props.label}</label>
             </div>
         )
     }

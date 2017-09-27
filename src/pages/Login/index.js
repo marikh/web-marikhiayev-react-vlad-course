@@ -2,42 +2,57 @@ import React from 'react';
 import { LoginHeroArea } from './components/';
 import './login.css';
 import { connect } from 'react-redux';
-import { getUserNameSelector, getPasswordSelector } from './loginReducer';
-import { deleteProductFromCart } from './actions';
-import { withRouter } from 'react-router-dom';
+import classNames from 'classnames';
+import { getUserNameSelector, getPasswordSelector, getLoggingInSelector, getLoggedInSelector, getLoginFailedSelector } from './loginReducer';
+import { loginAction, updateFieldAction } from './actions';
+import { withRouter, Redirect } from 'react-router-dom';
 import { 
     Layout,
     Section,
-    Heading,
-    Form
+    InputField
 } from '../../components/';
 
-const Login = ({ links, match, location, userName, password, loginAction }) => (
-    <Layout heroContent={LoginHeroArea}>
-        <Section>
-            <form onSubmit={(e) => {e.preventDefault(); loginAction();}}>
-                    <div className="form-group" style={{ padding: '2rem', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
-                        <InputField name="userName" 
-                                    type="text" value={userName} 
-                                    label="User Name"
-                                    required={true}/>
-                        <InputField name="password"
-                                    type="password" value={password} 
-                                    label="Password" 
-                                    required={true}/>
-                    
-                    <button type="submit">Login</button>
-                    </div>
-                </form>
-                <div className={classNames([this.state.submitted && 'submitted-notification'])}/>
-        </Section>
-    </Layout>
-)
+const Login = ({ links, match, location, history, 
+    userName, password, loggingIn, loggedIn, loginFailed, loginAction, updateFieldAction }) =>  {
+    
+    if(loggedIn){
+        return <Redirect to="/" />
+    }
 
+    return (
+        <Layout heroContent={LoginHeroArea}>
+            <Section>
+                { loggingIn && <span>Logging in...</span> }
+                { !loggingIn && !loggedIn &&      
+                    <form onSubmit={(e) => {e.preventDefault(); loginAction();}}>
+                        <div className="form-group" style={{ padding: '2rem', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                            <InputField name="userName" 
+                                        type="text" value={userName} 
+                                        label="User Name"
+                                        updateForm={(fieldName, newValue)=> updateFieldAction(fieldName, newValue)}
+                                        required={true}/>
+                            <InputField name="password"
+                                        type="password" value={password} 
+                                        label="Password" 
+                                        updateForm={(fieldName, newValue)=> updateFieldAction(fieldName, newValue)}
+                                        required={true}/>
+                        
+                        <button type="submit">Login</button>
+                        </div>
+                        <div className={classNames([loginFailed && 'login-failed-notification'])}/>
+                    </form>
+                }
+            </Section>
+        </Layout>
+    )
+}
 
 const mapStateToProps = (state) => ({
     userName : getUserNameSelector(state),
-    password : getPasswordSelector(state)
+    password : getPasswordSelector(state),
+    loggingIn: getLoggingInSelector(state),
+    loggedIn: getLoggedInSelector(state),
+    loginFailed: getLoginFailedSelector(state),
 })
 
-export default withRouter(connect(mapStateToProps, { loginAction })(Login));
+export default withRouter(connect(mapStateToProps, { loginAction, updateFieldAction })(Login));

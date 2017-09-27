@@ -3,8 +3,7 @@ import {
   Layout, 
   Heading, 
   Section, 
-  Card,
-  InputField
+  Card
 } from '../../components/';
 import { HomeFooter, HomeHeroArea }  from './components/';
 

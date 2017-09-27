@@ -1,8 +1,13 @@
 import { actionTypes } from './actions'
+import { globalActions } from '../../common/globalActions'
+
 
 const INITIAL_STATE = {
   userName : "",
-  password : ""
+  password : "",
+  loggingIn : false,
+  loggedIn : false,
+  loginFailed : false,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -14,14 +19,28 @@ export default (state = INITIAL_STATE, action) => {
       }
 
     case actionTypes.USER_LOGGING_IN:
-      return state.filter(cartProductId =>
-        cartProductId !== action.productId
-      )
+      return {
+        ...state,
+        loggingIn : true,
+        loggedIn: false,
+        loginFailed : false,
+      }
 
-    case actionTypes.USER_LOGGED_IN:
-      return state.filter(cartProductId =>
-        cartProductId !== action.productId
-      )
+    case globalActions.USER_LOGGED_IN:
+      return {
+        ...state,
+        loggingIn : false,
+        loggedIn: true,
+        loginFailed : false,
+      }
+
+    case actionTypes.LOGIN_FAILED:
+      return {
+        ...state,
+        loggingIn : false,
+        loggedIn: false,
+        loginFailed : true,
+      }
 
     default:
       return state
@@ -34,4 +53,16 @@ export const getUserNameSelector = (state) => {
 
 export const getPasswordSelector = (state) => {
     return state.loginPage.password;
+}
+
+export const getLoggingInSelector = (state) => {
+    return state.loginPage.loggingIn;
+}
+
+export const getLoggedInSelector = (state) => {
+    return state.loginPage.loggedIn;
+}
+
+export const getLoginFailedSelector = (state) => {
+    return state.loginPage.loginFailed;
 }

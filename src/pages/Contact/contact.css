@@ -1,0 +1,4 @@
+.contact-form-submit-failed-notification:before {
+    content: 'Contact form submit failed';
+    color: red
+}
