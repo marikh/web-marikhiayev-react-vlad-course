@@ -11,6 +11,8 @@ const INITIAL_STATE = productsIDs;
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case cartActionTypes.ADD_PRODUCT_TO_CART:
+
+      // we don't check if exists already in cart because we assume user can buy 2 or more of the same product
       return [
         ...state,
         action.addedProductId

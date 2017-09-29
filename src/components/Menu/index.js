@@ -28,7 +28,7 @@ const navigationLinks = [
         path: '/cart'
     },
     {
-        name: 'Login',
+        name: 'Sign in',
         path: '/login'
     }
 ]
@@ -39,10 +39,10 @@ const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProt
         <div className={classNames(['menu-content', menuState && 'opened' ])}>
             <div className="links-container">
                 { navigationLinks.map(({ name, path }, index) => { 
-                        if(name == 'Login' && showProtectedLinks)
+                        if(path == '/login' && showProtectedLinks)
                             return;
                         
-                        if(name == 'Cart' && !showProtectedLinks)
+                        if(path == '/cart' && !showProtectedLinks)
                             return;
 
                         return (<Link to={`${path}`} className="page-link" key={`page-${name.toLowerCase()}-${index}`}>
