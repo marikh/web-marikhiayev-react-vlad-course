@@ -2,8 +2,7 @@ import React from 'react';
 import { Layout, Section, Card, Heading } from '../../components/'
 import { connect } from 'react-redux';
 import './productPage.css';
-import { getCurrentProductSelector } from './productPageReducer';
-import { getLoggedInSelector } from '../Login/loginReducer';
+import { getCurrentProductSelector, getCanAddToCartSelector} from './productPageReducer';
 import { withRouter } from 'react-router-dom';
 import { addProductToCart } from '../Cart/actions';
 import { navigatedToProductPageAction } from './actions';
@@ -21,7 +20,7 @@ class ProductPage extends React.Component{
     } 
 
     onAddToCart = (e) => {
-        e.preventDefault();
+        
         this.props.addProductToCart(this.props.productId);
         alert("Added '" + this.props.productName + "' to cart :)");
     }
@@ -68,7 +67,7 @@ const mapStateToProps = (state) => {
         productImageURL :  currentProduct.imageUrl,
         productLongDescription :  currentProduct.longDesc,
         price :  currentProduct.price,
-        canAddToCart : getLoggedInSelector(state)
+        canAddToCart : getCanAddToCartSelector(state)
     }
 }
 

@@ -1,7 +1,9 @@
 import { actionTypes } from './actions'
+import { globalActions } from '../../common/globalActions'
 
 const INITIAL_STATE = {
   productId : undefined,
+  canAddToCart : false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -10,6 +12,12 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         productId : action.productId,
+      }
+
+    case globalActions.USER_LOGGED_IN:
+      return {
+        ...state,
+        canAddToCart: true,
       }
 
     default:
@@ -27,4 +35,8 @@ export const getCurrentProductSelector = (state) => {
     return null;
 
   return state.allProducts.find(product => product.id === currentProductId);
+}
+
+export const getCanAddToCartSelector = (state) => {
+  return state.productPage.canAddToCart;
 }
