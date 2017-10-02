@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getShowProtectedLinksSelector } from './menuReducer';
 import './menu.css';
+import T from 'i18n-react';
 
 const navigationLinks = [
     {
@@ -28,7 +29,7 @@ const navigationLinks = [
         path: '/cart'
     },
     {
-        name: 'Sign in',
+        name: 'SignIn',
         path: '/login'
     }
 ]
@@ -46,7 +47,7 @@ const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProt
                             return;
 
                         return (<Link to={`${path}`} className="page-link" key={`page-${name.toLowerCase()}-${index}`}>
-                                    { name }
+                                    <T.span text={{ key: `${name}`}}/>
                                 </Link>)
                     }
                 )}

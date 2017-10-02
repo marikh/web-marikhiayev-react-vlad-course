@@ -1,9 +1,17 @@
 import Layout from './Layout';
-import { mount, shallow } from "enzyme";
+import { mount, shallow, dive } from "enzyme";
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom'
 import { Header, Body, Footer, Menu } from './';
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import { createMockStore } from 'redux-test-utils';
+
+const INITIAL_STATE = {
+        showProtectedLinks : false
+    };
+
+const mockedStore = createMockStore({ menu : INITIAL_STATE });
 
 describe('Layout outer tests', () => {
     let props;
@@ -12,9 +20,11 @@ describe('Layout outer tests', () => {
     const layoutComponent = () => {
         if (!mountedlayoutComponent) {
             mountedlayoutComponent = mount(
-                <MemoryRouter>
-                    <Layout  />
-                </MemoryRouter>
+                <Provider store={mockedStore}>
+                    <MemoryRouter>
+                        <Layout  />
+                    </MemoryRouter>
+                </Provider>
             );
         }
         return mountedlayoutComponent
@@ -22,15 +32,15 @@ describe('Layout outer tests', () => {
 
     beforeEach(() => {
         props = {};
-        mountedlayoutComponent = undefined;
+        if(mountedlayoutComponent != null){
+            mountedlayoutComponent.unmount();
+            mountedlayoutComponent = undefined;
+        }
+        
     });
 
-    it('is Layout', () => {
-        const LayoutComponent = <Layout />;
-        expect(LayoutComponent.type).toBe(Layout)
-    })
-
     it("always renders a section", () => {
+
         const sections = layoutComponent().find("section");
         expect(sections.length).toBeGreaterThan(0);
     });
@@ -55,15 +65,18 @@ describe('Layout outer tests', () => {
 
 describe('Layout snapshot tests', () => {
     it('test weird snapshot', () => {
+
         const tree = renderer.create(
-            <MemoryRouter>
-                <Layout />
-            </MemoryRouter>
+            <Provider store={mockedStore}>
+                <MemoryRouter>
+                    <Layout  />
+                </MemoryRouter>
+            </Provider>
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
     })
-})
+ })
 
 describe('Layout shallow tests', () => {
 

@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart snapshot tests test weird snapshot 1`] = `
+<div
+  className="App"
+  onClick={[Function]}
+>
+  <header
+    className="App-header"
+  >
+    <div
+      className="App-menubar"
+    >
+      <label
+        className="hamburger-icon fa fa-bars"
+        onClick={[Function]}
+      />
+      <div
+        className="menu-content"
+      >
+        <div
+          className="links-container"
+        >
+          <a
+            className="page-link"
+            href="/"
+            onClick={[Function]}
+          >
+            <span>
+              Home
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            <span>
+              About
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/products"
+            onClick={[Function]}
+          >
+            <span>
+              Products
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/contact"
+            onClick={[Function]}
+          >
+            <span>
+              Contact
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/login"
+            onClick={[Function]}
+          >
+            <span>
+              SignIn
+            </span>
+          </a>
+        </div>
+        <div
+          className="socialLinks"
+        >
+          <div
+            className="social-links"
+          >
+            <a
+              className="fa fa-facebook"
+              href="facebook.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-github"
+              href="github.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-envelope"
+              href="vnovick@gmail.comm"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="overlay"
+      />
+    </div>
+    <section
+      className="App-subheader"
+    >
+      <div
+        className="App-hero"
+      >
+        <h3
+          className="heading heading-3"
+        >
+          Cart
+        </h3>
+      </div>
+    </section>
+  </header>
+  <section
+    className="App-body"
+  >
+    <div
+      className="raised-2 section"
+    >
+      <div
+        className="products-horizontal-gallery"
+      >
+        <div
+          className="raised-2 card product-card"
+          style={
+            Object {
+              "backgroundImage": "url(//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg)",
+            }
+          }
+        >
+          <a
+            className="product-wrapping-link"
+            href="/products/123123-234-2341-123123-123123"
+            onClick={[Function]}
+          >
+            <div
+              className="product-top-title"
+            >
+              <p
+                className="product-title"
+              >
+                Greek amphora 1
+              </p>
+              <p
+                className="product-price"
+              >
+                101K USD
+              </p>
+            </div>
+            <p
+              className="product-bottom-desc"
+            >
+              Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.
+            </p>
+          </a>
+          <button
+            className="cart-product-delete-button"
+            id="remove-button"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          className="raised-2 card product-card"
+          style={
+            Object {
+              "backgroundImage": "url(//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg)",
+            }
+          }
+        >
+          <a
+            className="product-wrapping-link"
+            href="/products/123123-12342-456456-123123-123123"
+            onClick={[Function]}
+          >
+            <div
+              className="product-top-title"
+            >
+              <p
+                className="product-title"
+              >
+                Greek amphora 2
+              </p>
+              <p
+                className="product-price"
+              >
+                102K USD
+              </p>
+            </div>
+            <p
+              className="product-bottom-desc"
+            >
+              Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.
+            </p>
+          </a>
+          <button
+            className="cart-product-delete-button"
+            id="remove-button"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer
+    className="App-footer"
+  >
+    <div
+      className="social-links"
+    >
+      <a
+        className="text-link"
+        href="facebook.com"
+        target="_blank"
+      >
+        Facebook
+      </a>
+      <a
+        className="text-link"
+        href="github.com"
+        target="_blank"
+      >
+        Github
+      </a>
+      <a
+        className="text-link"
+        href="vnovick@gmail.comm"
+        target="_blank"
+      >
+        Email
+      </a>
+    </div>
+  </footer>
+</div>
+`;

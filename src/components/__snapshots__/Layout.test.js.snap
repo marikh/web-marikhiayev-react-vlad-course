@@ -26,49 +26,45 @@ exports[`Layout snapshot tests test weird snapshot 1`] = `
             href="/"
             onClick={[Function]}
           >
-            Home
+            <span>
+              Home
+            </span>
           </a>
           <a
             className="page-link"
             href="/about"
             onClick={[Function]}
           >
-            About
+            <span>
+              About
+            </span>
           </a>
           <a
             className="page-link"
             href="/products"
             onClick={[Function]}
           >
-            Products
+            <span>
+              Products
+            </span>
           </a>
           <a
             className="page-link"
             href="/contact"
             onClick={[Function]}
           >
-            Contact
+            <span>
+              Contact
+            </span>
           </a>
           <a
             className="page-link"
             href="/login"
             onClick={[Function]}
           >
-            Login
-          </a>
-          <a
-            className="page-link"
-            href="/protected"
-            onClick={[Function]}
-          >
-            Protected Page
-          </a>
-          <a
-            className="page-link"
-            href="/products?referral=Amazon"
-            onClick={[Function]}
-          >
-            Referral Link
+            <span>
+              SignIn
+            </span>
           </a>
         </div>
         <div

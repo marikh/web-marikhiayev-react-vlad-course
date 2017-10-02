@@ -60,7 +60,7 @@ export default class Layout extends React.Component {
         }
     } = this;
     return (
-        <div className={classNames(["App", className ])} onClick={() => close()}>    
+        <div className={classNames(["App", className ])} onClick={() => close()} >    
              <Header menuConfig={{ menuState, open, socialLinks }}>
                   { HeroArea && <HeroArea links={socialLinks}/> }
               </Header>
