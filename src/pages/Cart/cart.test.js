@@ -1,11 +1,12 @@
-import { mount, shallow, dive, equals, exists } from "enzyme";
+import { mount, shallow } from "enzyme";
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom'
 import { Layout } from '../../components/';
 import renderer from 'react-test-renderer';
+import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux';
-import { createMockStore, createMockDispatch } from 'redux-test-utils';
-import Cart from '../../pages/Cart/';
+import ConnectedCart from '../../pages/Cart/';
+import {createStore} from 'redux';
 
 const productsIDs = [
     '123123-234-2341-123123-123123',
@@ -31,90 +32,64 @@ const products = [
         price: '102K USD'
     }];
 
-const mockedStore = createMockStore({ cart : CART_INITIAL_STATE , allProducts: products, menu : MENU_INITIAL_STATE});
-let mountedCartComponent;
-let props;
+const mockStore = configureStore()
 
-const cartComponent = () => {
-    if (!mountedCartComponent) {
-        mountedCartComponent = mount(
-            <Provider store={mockedStore}>
-                <MemoryRouter>
-                    <Cart />
-                </MemoryRouter>
-            </Provider>
-        );
-    }
-    return mountedCartComponent
-}
-
-const unMounthCart = () => {
-        props = {};
-        if(mountedCartComponent != null){
-            mountedCartComponent.unmount();
-        }
-        mountedCartComponent = undefined;
-}
+const initialState = { cart : CART_INITIAL_STATE , allProducts: products, menu : MENU_INITIAL_STATE } ;
+    let store, wrapper;  
 
 describe('Cart outer tests', () => {
- 
-    beforeEach(() => {
-        unMounthCart();
-    });
+    
+
+     beforeEach(()=>{
+        store = mockStore(initialState);
+        wrapper = mount( <Provider store={store}><MemoryRouter><ConnectedCart /></MemoryRouter></Provider> );
+    })
 
     it("has Layout", () => {
-        expect(cartComponent().find(Layout).length).toBeGreaterThan(0)
+        expect(wrapper.find(Layout).length).toBeGreaterThan(0)
     })
     
     it("has HeroArea Component", () => {
-        expect(cartComponent().find(".App-hero").length).toBeGreaterThan(0)
+        expect(wrapper.find(".App-hero").length).toBeGreaterThan(0)
     })
 
     it("always renders a section", () => {
-        const sections = cartComponent().find("section");
+        const sections = wrapper.find("section");
         expect(sections.length).toBeGreaterThan(0);
     });
     
-
     it("contains remove buttons of products", () => {
-        const removeButtons = cartComponent().find("#remove-button");
-        expect(removeButtons.length).toBeGreaterThan(0);
+        const removeButtons = wrapper.find("#remove-button");
+        expect(removeButtons.length).toBe(2);
     });
 
-    it(`Cart items are deleted on click on delete button`, () => {
+
+
+    it(`check DELETE_PRODUCT_FROM_CART`, () => {
 
         const deleteProductAction = {type: 'DELETE_PRODUCT_FROM_CART', 
                                     productId : '123123-234-2341-123123-123123'};
+                                    
+        const firstProductDeleteButton = wrapper.find("#remove-button").first();
+        firstProductDeleteButton.simulate('click');
 
-        const deleteProductFromCartMock = jest.fn();
-        props.deleteProductFromCart = deleteProductFromCartMock;
-        props.products = CART_INITIAL_STATE;
-
-        const dispatchMock = createMockDispatch();
-        dispatchMock.dispatch(deleteProductAction);
-        const firstProductDeleteButton = cartComponent().find("#remove-button").first();
-        // mockedStore.dispatch(deleteProductAction);
-         firstProductDeleteButton.simulate('click');
-        // const deletedProductDeleteButton = cartComponent().find("#remove-button").first();
-
-          expect(deleteProductFromCartMock.mock.calls.length).toBe(1);
-        // expect(cartComponent().find(deletedProductDeleteButton).exists()).toBe(false);
-        
-        
-        //  expect(mockedStore.isActionDispatched(deleteProductAction)).toBe(true);
-        // expect(deletedProductDeleteButton.length).toBe(0);
+        // Test if my store dispatched the expected actions
+        const actions = store.getActions().map(action => action.type);
+        const expectedPayload = deleteProductAction.type;
+        expect(actions).toEqual([expectedPayload]);
     })
-
-
 })
 
 describe('Cart snapshot tests', () => {
+
     it('test weird snapshot', () => {
-        
+
+        const store = mockStore(initialState);
+
         const tree = renderer.create(
-            <Provider store={mockedStore}>
+            <Provider store={store}>
                 <MemoryRouter>
-                    <Cart />
+                    <ConnectedCart />
                 </MemoryRouter>
             </Provider>
         ).toJSON();
@@ -122,32 +97,4 @@ describe('Cart snapshot tests', () => {
         expect(tree).toMatchSnapshot();
     })
  })
-
-// describe('Cart shallow tests', () => {
-
-// //     it(`Layout has menu state and it's false`, () => {
-// //         const layout = shallow(<Layout />)
-// //         expect(layout.state().menuState).toBe(false);
-// //     })
-
-    // it(`Cart items are deleted on click on delete button`, () => {
-    //     const cart = shallow(<Cart products={CART_INITIAL_STATE} />)
-    //     // cart.props().products = CART_INITIAL_STATE;
-
-
-    //     const deleteProductAction = {type: 'DELETE_PRODUCT_FROM_CART', 
-    //                                 productId : '123123-234-2341-123123-123123'};
-
-    //     // const dispatchMock = createMockDispatch();
-    //     // dispatchMock.dispatch(deleteProductAction);
-    //     const firstProductDeleteButton = cart.find("#remove-button").first();
-    //     // mockedStore.dispatch(deleteProductAction);
-    //      firstProductDeleteButton.simulate('click');
-    //     // const deletedProductDeleteButton = cartComponent().find("#remove-button").first();
-          
-    //     expect(cart.find("#remove-button").length).toBe(1);
-    // })
-
-// })
-
 
