@@ -74,9 +74,8 @@ describe('cartReducer test', () => {
         const state = {cart: [], allProducts: productsFullData };
         expect(getCartProductsSelector(state)).toEqual([])
     })
-
     
-    it('getCartProductsSelector empty', () => {
+    it('getCartProductsSelector with specific ID', () => {
         const state = {cart: ['123123-234-2341-123123-123123'], allProducts: productsFullData };
         expect(getCartProductsSelector(state)).toEqual([{
         id: '123123-234-2341-123123-123123',
