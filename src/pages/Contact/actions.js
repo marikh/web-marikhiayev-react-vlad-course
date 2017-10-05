@@ -12,6 +12,10 @@ export const updateFieldAction = (changedFieldName, newValue) => ({
     newValue: newValue
 })
 
+export const submittingAction = () => ({
+    type: actionTypes.SUBMITTING,
+})
+
 export const contactFormSubmittedAction = () => ({
     type: actionTypes.CONTACT_FORM_SUBMITTED,
 })
@@ -21,6 +25,7 @@ export const failedSubmitAction = () => ({
 })
 
 export const submitAction = () => (dispatch, getState) => {
+    dispatch(submittingAction());
     dispatch(contactFormSubmittedAction());
     alert("Sent");
 }
