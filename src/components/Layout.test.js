@@ -14,7 +14,6 @@ const INITIAL_STATE = {
 const mockedStore = createMockStore({ menu : INITIAL_STATE });
 
 describe('Layout outer tests', () => {
-    let props;
     let mountedlayoutComponent;
 
     const layoutComponent = () => {
@@ -31,7 +30,6 @@ describe('Layout outer tests', () => {
     }
 
     beforeEach(() => {
-        props = {};
         if(mountedlayoutComponent != null){
             mountedlayoutComponent.unmount();
             mountedlayoutComponent = undefined;

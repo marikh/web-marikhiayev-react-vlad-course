@@ -21,7 +21,7 @@ class loginService{
             return false;
 
         if(username.toLowerCase() === user.toLowerCase() && pass === password){
-            this.loggedInUser = user;
+            this.loggedInUser = username;
             this.loggedIn = true;
             return true;
         }

@@ -11,7 +11,7 @@ import Cart from './pages/Cart/';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 // import CSSTransition from 'react-transition-group/CSSTransition'
-import { checkAuth } from './services/authService';
+import checkAuth from './services/authService';
 import T from 'i18n-react';
 
 import {

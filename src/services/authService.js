@@ -1,17 +1,20 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import loginService from './loginService'
 
 
-const checkAuth = (WrappedComponent) => {
-  const isAuthenticated = true;
+export default (WrappedComponent) => {
+  return class CheckAuth extends React.Component {
 
-  return ({ match }) => (
-    isAuthenticated ? 
-      <WrappedComponent {...this.props } match={match}/> : 
-      <Redirect to="login" />
-  )
-}
+    constructor(props){
+      super(props);
+      this.loginService = new loginService();
+    }
 
-export {
-    checkAuth
+    render(){
+      return (this.loginService.loggedIn ? 
+        <WrappedComponent {...this.props }/> : 
+        <Redirect to="login" />
+    )}
+  }
 }
