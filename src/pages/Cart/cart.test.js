@@ -50,7 +50,7 @@ describe('Cart outer tests', () => {
     })
     
     it("has HeroArea Component", () => {
-        expect(wrapper.find(".App-hero").length).toBeGreaterThan(0)
+        expect(wrapper.find(Layout).prop('heroContent') != null).toBe(true)
     })
 
     it("always renders a section", () => {

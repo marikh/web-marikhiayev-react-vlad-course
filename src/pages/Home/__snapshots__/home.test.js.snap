@@ -1,0 +1,360 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot tests test weird snapshot 1`] = `
+<div
+  className="App"
+  onClick={[Function]}
+>
+  <header
+    className="App-header"
+  >
+    <div
+      className="App-menubar"
+    >
+      <label
+        className="hamburger-icon fa fa-bars"
+        onClick={[Function]}
+      />
+      <div
+        className="menu-content"
+      >
+        <div
+          className="links-container"
+        >
+          <a
+            className="page-link"
+            href="/"
+            onClick={[Function]}
+          >
+            <span>
+              Home
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            <span>
+              About
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/products"
+            onClick={[Function]}
+          >
+            <span>
+              Products
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/contact"
+            onClick={[Function]}
+          >
+            <span>
+              Contact
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/login"
+            onClick={[Function]}
+          >
+            <span>
+              SignIn
+            </span>
+          </a>
+        </div>
+        <div
+          className="socialLinks"
+        >
+          <div
+            className="social-links"
+          >
+            <a
+              className="fa fa-facebook"
+              href="facebook.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-github"
+              href="github.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-envelope"
+              href="vnovick@gmail.comm"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="overlay"
+      />
+    </div>
+    <section
+      className="App-subheader"
+    >
+      <div
+        className="App-hero"
+      >
+        <h1
+          className="heading heading-1"
+        >
+          Home Page
+        </h1>
+      </div>
+    </section>
+  </header>
+  <section
+    className="App-body"
+  >
+    <div
+      className="raised-2 section"
+    >
+      <h2
+        className="heading heading-2"
+      >
+        Services
+      </h2>
+      <div
+        className=""
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+      </div>
+    </div>
+    <div
+      className="raised-2 section"
+    >
+      <h2
+        className="heading heading-2"
+      >
+        Technologies
+      </h2>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+      </div>
+    </div>
+    <div
+      className="raised-2 section"
+    >
+      <h2
+        className="heading heading-2"
+      >
+        Blog Posts
+      </h2>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+      </div>
+    </div>
+    <div
+      className="raised-2 section"
+    >
+      <h2
+        className="heading heading-2"
+      >
+        Feedback
+      </h2>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+        <div
+          className="raised-2 card"
+        >
+          Consectetur cillum enim cillum dolor cupidatat pariatur occaecat.
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer
+    className="App-footer"
+  >
+    <div>
+      <div
+        className="social-links"
+      >
+        <a
+          className="text-link"
+          href="facebook.com"
+          target="_blank"
+        >
+          Facebook
+        </a>
+        <a
+          className="text-link"
+          href="github.com"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className="text-link"
+          href="vnovick@gmail.comm"
+          target="_blank"
+        >
+          Email
+        </a>
+      </div>
+      <h3
+        onClick={[Function]}
+      >
+        Back
+      </h3>
+    </div>
+  </footer>
+</div>
+`;
