@@ -7,7 +7,6 @@ import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux';
 import Home from '../../pages/Home/';
 import {createStore} from 'redux';
-import thunk from 'redux-thunk';
 
 const MENU_INITIAL_STATE = {showProtectedLinks : false};
 
