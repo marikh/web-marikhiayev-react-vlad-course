@@ -12,7 +12,7 @@ import {
   Link
 } from 'react-router-dom'
 
-const Cart = ({ links, match, location, products, deleteProductFromCart }) => (
+export const Cart = ({ links, match, location, products, deleteProductFromCart }) => (
     <Layout heroContent={CartHeroArea}>
         <Section>
             <div className="products-horizontal-gallery">

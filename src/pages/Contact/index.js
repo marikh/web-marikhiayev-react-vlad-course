@@ -11,7 +11,7 @@ import {
     InputField
 } from '../../components/';
 
-class Contact extends React.Component{
+export class Contact extends React.Component{
 
     componentWillUnmount() {
            this.props.unloadContactForm();

@@ -5,7 +5,7 @@ import { Layout } from '../../components/';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux';
-import ConnectedCart from '../../pages/Cart/';
+import ConnectedCart,{Cart} from '../../pages/Cart/';
 import {createStore} from 'redux';
 
 const productsIDs = [
@@ -63,8 +63,6 @@ describe('Cart outer tests', () => {
         expect(removeButtons.length).toBe(2);
     });
 
-
-
     it(`check DELETE_PRODUCT_FROM_CART`, () => {
 
         const deleteProductAction = {type: 'DELETE_PRODUCT_FROM_CART', 
@@ -79,6 +77,19 @@ describe('Cart outer tests', () => {
         expect(actions).toEqual([expectedPayload]);
     })
 })
+
+describe('Cart Shallow Render',()=>{
+    let wrapper;
+
+    beforeEach(()=>{
+        wrapper = shallow(<Cart products={products}/>)
+    })
+
+    it('render the DUMB component', () => {
+       expect(wrapper.length).toEqual(1)
+    });
+})
+
 
 describe('Cart snapshot tests', () => {
 

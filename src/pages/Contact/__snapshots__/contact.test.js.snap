@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart snapshot tests test weird snapshot 1`] = `
+<div
+  className="App"
+  onClick={[Function]}
+>
+  <header
+    className="App-header"
+  >
+    <div
+      className="App-menubar"
+    >
+      <label
+        className="hamburger-icon fa fa-bars"
+        onClick={[Function]}
+      />
+      <div
+        className="menu-content"
+      >
+        <div
+          className="links-container"
+        >
+          <a
+            className="page-link"
+            href="/"
+            onClick={[Function]}
+          >
+            <span>
+              Home
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            <span>
+              About
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/products"
+            onClick={[Function]}
+          >
+            <span>
+              Products
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/contact"
+            onClick={[Function]}
+          >
+            <span>
+              Contact
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/login"
+            onClick={[Function]}
+          >
+            <span>
+              SignIn
+            </span>
+          </a>
+        </div>
+        <div
+          className="socialLinks"
+        >
+          <div
+            className="social-links"
+          >
+            <a
+              className="fa fa-facebook"
+              href="facebook.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-github"
+              href="github.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-envelope"
+              href="vnovick@gmail.comm"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="overlay"
+      />
+    </div>
+    <section
+      className="App-subheader"
+    />
+  </header>
+  <section
+    className="App-body"
+  >
+    <div
+      className="raised-2 section"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "padding": "2rem",
+            }
+          }
+        >
+          <div
+            className="input-field form-dirty"
+          >
+            <input
+              label="Name"
+              name="name"
+              onChange={[Function]}
+              required={false}
+              type="text"
+              value="da"
+            />
+            <label>
+              Name
+            </label>
+          </div>
+          <div
+            className="input-field form-dirty"
+          >
+            <input
+              label="Email"
+              name="email"
+              onChange={[Function]}
+              required={true}
+              type="email"
+              value="da@gmail.com"
+            />
+            <label>
+              Email
+            </label>
+          </div>
+          <div
+            className="input-field form-dirty"
+          >
+            <textarea
+              label="Message"
+              name="message"
+              onChange={[Function]}
+              required={true}
+              type="textarea"
+              value="asd"
+            />
+            <label>
+              Message
+            </label>
+          </div>
+          <button
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className=""
+        />
+      </form>
+    </div>
+  </section>
+  <footer
+    className="App-footer"
+  >
+    <div
+      className="social-links"
+    >
+      <a
+        className="text-link"
+        href="facebook.com"
+        target="_blank"
+      >
+        Facebook
+      </a>
+      <a
+        className="text-link"
+        href="github.com"
+        target="_blank"
+      >
+        Github
+      </a>
+      <a
+        className="text-link"
+        href="vnovick@gmail.comm"
+        target="_blank"
+      >
+        Email
+      </a>
+    </div>
+  </footer>
+</div>
+`;
