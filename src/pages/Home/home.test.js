@@ -19,6 +19,9 @@ describe('Home outer tests', () => {
     
 
      beforeEach(()=>{
+        if(wrapper != null)
+            wrapper.unmount();
+            
         store = mockStore(initialState);
         wrapper = mount( <Provider store={store}><MemoryRouter><Home /></MemoryRouter></Provider> );
     })

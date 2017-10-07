@@ -4,7 +4,6 @@ import { ProductsHeroArea } from './components/';
 import './products.css';
 import { connect } from 'react-redux';
 import { getProductsSelector } from './allProductsReducer';
-import { navigateToProductPage } from '../ProductPage/actions';
 import { withRouter } from 'react-router-dom';
 
 import {
@@ -12,7 +11,7 @@ import {
   Link
 } from 'react-router-dom'
 
-const Products = ({ links, match, location, products, navigateToProductPage }) => (
+export const Products = ({ links, match, location, products }) => (
     <Layout heroContent={ProductsHeroArea}>
         <Section>
             <div className="products-horizontal-gallery">

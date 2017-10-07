@@ -27,6 +27,9 @@ describe('contact outer tests', () => {
     
 
      beforeEach(()=>{
+        if(wrapper != null)
+            wrapper.unmount();
+
         store = mockStore(initialState);
         wrapper = mount( <Provider store={store}><MemoryRouter><ConnectedContact /></MemoryRouter></Provider> );
     })
@@ -60,7 +63,7 @@ describe('contact outer tests', () => {
 
         const unloadContactFormActionType = { type: 'UNLOAD_CONTACT_FORM' };
 
-        const firstProductDeleteButton = wrapper.unmount();
+        wrapper.unmount();
 
         // Test if my store dispatched the expected actions
         const actions = store.getActions();

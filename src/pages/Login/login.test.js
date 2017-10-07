@@ -26,10 +26,13 @@ const mockStore = configureStore(middlewares);
 const initialState = { loginPage: LOGIN_INITIAL_STATE, menu: MENU_INITIAL_STATE } ;
     let store, wrapper;  
 
-describe('contact outer tests', () => {
+describe('login outer tests', () => {
     
 
      beforeEach(()=>{
+        if(wrapper != null)
+            wrapper.unmount();
+
         store = mockStore(initialState);
         wrapper = mount( <Provider store={store}><MemoryRouter><ConnectedLogin /></MemoryRouter></Provider> );
     })
@@ -90,7 +93,7 @@ describe('contact outer tests', () => {
     })
 })
 
-describe('Contact Shallow Render',()=>{
+describe('login Shallow Render',()=>{
     let wrapper;
 
     beforeEach(()=>{
@@ -110,7 +113,7 @@ describe('Contact Shallow Render',()=>{
     });
 })
 
-describe('Cart snapshot tests', () => {
+describe('login snapshot tests', () => {
 
     it('test weird snapshot', () => {
 

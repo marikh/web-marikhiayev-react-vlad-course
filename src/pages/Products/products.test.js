@@ -1,19 +1,17 @@
 import { mount, shallow } from "enzyme";
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom'
-import { Layout } from '../../components/';
+import { MemoryRouter, Route, Switch, Link } from 'react-router-dom'
+import { Layout, Card } from '../../components/';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux';
-import ConnectedCart,{Cart} from '../../pages/Cart/';
+import ConnectedProducts,{Products} from '../../pages/Products/';
+import ConnectedProductPage, {ProductPage} from '../../pages/ProductPage/';
 import {createStore} from 'redux';
+import { delay } from '../../common/Extensions/promises';
 
-const productsIDs = [
-    '123123-234-2341-123123-123123',
-    '123123-12342-456456-123123-123123',
-];
 const MENU_INITIAL_STATE = {showProtectedLinks : false};
-const CART_INITIAL_STATE = productsIDs;
+
 const products = [
     {
         id: '123123-234-2341-123123-123123',
@@ -32,20 +30,32 @@ const products = [
         price: '102K USD'
     }];
 
+
+// const PRODUCTPAGE_INITIAL_STATE = {
+//   productId : "123123-234-2341-123123-123123",
+//   canAddToCart : true
+// };
+
 const mockStore = configureStore()
 
-const initialState = { cart : CART_INITIAL_STATE , allProducts: products, menu : MENU_INITIAL_STATE } ;
+const initialState = { allProducts: products, menu : MENU_INITIAL_STATE /*, productPage: PRODUCTPAGE_INITIAL_STATE */ } ;
     let store, wrapper;  
 
-describe('Cart outer tests', () => {
-    
+describe('Products outer tests', () => {
 
      beforeEach(()=>{
         if(wrapper != null)
             wrapper.unmount();
 
         store = mockStore(initialState);
-        wrapper = mount( <Provider store={store}><MemoryRouter><ConnectedCart /></MemoryRouter></Provider> );
+        wrapper = mount( <Provider store={store}>
+                            <MemoryRouter initialEntries={[ '/products' ]}>
+                                <Switch>
+                                    <Route render={({match}) => <ConnectedProducts props={{match: match}}/>} path="/products" />
+                                    {/*<Route render={({match}) => <ConnectedProductPage props={{match: match}}/>} path="/products/:id" />*/}
+                                </Switch>
+                            </MemoryRouter>
+                        </Provider> );
     })
 
     it("has Layout", () => {
@@ -60,32 +70,22 @@ describe('Cart outer tests', () => {
         const sections = wrapper.find("section");
         expect(sections.length).toBeGreaterThan(0);
     });
-    
-    it("contains remove buttons of products", () => {
-        const removeButtons = wrapper.find("#remove-button");
-        expect(removeButtons.length).toBe(2);
+
+    it("has 2 products Cards", () => {
+        const cards = wrapper.find(Card);
+        expect(cards.length).toBe(2);
     });
 
-    it(`check DELETE_PRODUCT_FROM_CART`, () => {
-
-        const deleteProductAction = {type: 'DELETE_PRODUCT_FROM_CART', 
-                                    productId : '123123-234-2341-123123-123123'};
-                                    
-        const firstProductDeleteButton = wrapper.find("#remove-button").first();
-        firstProductDeleteButton.simulate('click');
-
-        // Test if my store dispatched the expected actions
-        const actions = store.getActions().map(action => action.type);
-        const expectedPayload = deleteProductAction.type;
-        expect(actions).toEqual([expectedPayload]);
+    it(`check good target path of product Link`, () => {
+        expect(wrapper.find(Card).at(0).find(Link).at(0).prop('to')).toEqual('/products/123123-234-2341-123123-123123');
     })
 })
 
-describe('Cart Shallow Render',()=>{
+describe('Products Shallow Render',()=>{
     let wrapper;
 
     beforeEach(()=>{
-        wrapper = shallow(<Cart products={products}/>)
+        wrapper = shallow(<Products products={products} match={{url: "/products"}}/>)
     })
 
     it('render the DUMB component', () => {
@@ -94,7 +94,7 @@ describe('Cart Shallow Render',()=>{
 })
 
 
-describe('Cart snapshot tests', () => {
+describe('Products snapshot tests', () => {
 
     it('test weird snapshot', () => {
 
@@ -102,10 +102,10 @@ describe('Cart snapshot tests', () => {
 
         const tree = renderer.create(
             <Provider store={store}>
-                <MemoryRouter>
-                    <ConnectedCart />
-                </MemoryRouter>
-            </Provider>
+                            <MemoryRouter initialEntries={[ '/products' ]}>
+                                <Route render={({match}) => <ConnectedProducts props={{match: match}}/>} path="/products" />
+                            </MemoryRouter>
+                        </Provider>
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
