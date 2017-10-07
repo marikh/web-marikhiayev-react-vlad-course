@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import './inputfield.css';
 import { Prompt } from 'react-router-dom';
 import { omit } from 'lodash';
+import T from 'i18n-react';
 
 export default class InputField extends React.Component {
 
@@ -14,10 +15,10 @@ export default class InputField extends React.Component {
     //onBlur = (value) => this.props.updateForm && this.props.updateForm(this.props.name, this.state.value);
 
     render(){
-        
+
         const inputProps = {
             name: this.props.name, 
-            label: this.props.label, 
+            label: T.translate(this.props.label), 
             type: this.props.type, 
             value: this.props.value, 
             required: this.props.required,
@@ -30,7 +31,7 @@ export default class InputField extends React.Component {
                     <textarea { ...inputProps } /> :
                     <input type={this.props.type} {...inputProps} />
                 }
-                <label>{this.props.label}</label>
+                <label>{inputProps.label}</label>
             </div>
         )
     }

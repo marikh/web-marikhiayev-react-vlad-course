@@ -104,7 +104,7 @@ exports[`Home snapshot tests test weird snapshot 1`] = `
         <h1
           className="heading heading-1"
         >
-          Home Page
+          Home
         </h1>
       </div>
     </section>

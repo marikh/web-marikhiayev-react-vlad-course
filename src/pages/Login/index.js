@@ -11,6 +11,7 @@ import {
     Section,
     InputField
 } from '../../components/';
+import T from 'i18n-react';
 
 export const Login = ({ userName, password, loggingIn, loggedIn, loginFailed, loginAction, updateFieldAction }) =>  {
     
@@ -21,7 +22,7 @@ export const Login = ({ userName, password, loggingIn, loggedIn, loginFailed, lo
     return (
         <Layout heroContent={LoginHeroArea}>
             <Section>
-                { loggingIn && <span>Logging in...</span> }
+                { loggingIn && <T.span text={{ key: "LoggingIn" }} /> }
                 { !loggingIn && !loggedIn &&      
                     <form onSubmit={(e) => {e.preventDefault(); loginAction();}}>
                         <div className="form-group" style={{ padding: '2rem', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
@@ -36,7 +37,7 @@ export const Login = ({ userName, password, loggingIn, loggedIn, loginFailed, lo
                                         updateForm={(fieldName, newValue)=> updateFieldAction(fieldName, newValue)}
                                         required={true}/>
                         
-                        <button type="submit">Login</button>
+                        <button type="submit">{ T.translate("Login") }</button>
                         </div>
                         <div className={classNames([loginFailed && 'login-failed-notification'])}/>
                     </form>

@@ -1,6 +1,4 @@
 {
-  "welcome": "Home page {myName}. {{howAreYou}} ?",
-  "howAreYou": "How are you",
   "Home" : "Home",
   "About" : "About",
   "Products" : "Products",
@@ -12,8 +10,7 @@
   "Blog Posts" : "Blog Posts",
   "Feedback" : "Feedback",
   "Back" : "Back",
-  "HomePage" : "Home Page",
-  "NotFound" : "Not Found",
+  "NotFound" : "Not Found :(",
   "Shop" : "Shop",
   "Login": "Login",
   "Submit" : "Submit",
@@ -22,9 +19,11 @@
   "Price" : "Price",
   "loginInOrderToBuy" : "Sign in so you will be able to buy it",
   "Delete" : "Delete",
-  "UserName" : "User Name",
+  "User Name" : "Users Name",
   "Password" : "Password",
   "Name" : "Name",
   "Email" : "Email",
-  "Message" : "Message"
+  "Message" : "Message",
+  "LoggingIn": "Logging in...",
+  "LoginFailed": "Login failed"
 }

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getCartProductsSelector } from './cartReducer';
 import { deleteProductFromCart } from './actions';
 import { withRouter } from 'react-router-dom';
+import T from 'i18n-react';
 
 import {
   Route,
@@ -25,7 +26,7 @@ export const Cart = ({ links, match, location, products, deleteProductFromCart }
                             </div>
                             <p className="product-bottom-desc">{ shortDesc }</p>
                         </Link>
-                        <button className="cart-product-delete-button" id="remove-button" onClick={(e) => deleteProductFromCart(id)}>Delete</button>
+                        <button className="cart-product-delete-button" id="remove-button" onClick={(e) => deleteProductFromCart(id)}>{T.translate("Delete")}</button>
                     </Card>
                   ))
                 }         

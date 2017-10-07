@@ -6,14 +6,14 @@ import { getCurrentProductSelector, getCanAddToCartSelector} from './productPage
 import { withRouter } from 'react-router-dom';
 import { addProductToCart } from '../Cart/actions';
 import { navigatedToProductPageAction } from './actions';
-
+import T from 'i18n-react';
 
 import {
   Route,
   Link
 } from 'react-router-dom'
 
-class ProductPage extends React.Component{
+export class ProductPage extends React.Component{
 
     componentWillMount(){
         this.props.navigatedToProductPageAction(this.props.match.params.id)
@@ -34,19 +34,19 @@ class ProductPage extends React.Component{
             <Layout>
                 <Section>
                     { productId == null ? 
-                        <div>No such product :(</div> : 
+                        <div>{T.translate("NoSuchProduct")}</div> : 
                         (<div>
                             <Heading size={2}>
                                 { productName }
                             </Heading>
                             <div className="product-page-image" src={productImageURL} style={{ backgroundImage: `url(${productImageURL})`}}/>
                             <p>{ productLongDescription }</p>
-                            <div>Price:
+                            <div>{T.translate("Price")}:
                                 <span> { price }</span>
                             </div>
                             { !canAddToCart ? 
-                                <div>[Sign in so you will be able to buy it]</div> :
-                                <button className="cart-product-add-button" id="add-to-cart-button" onClick={(e) => this.onAddToCart(e)}>Buy</button>
+                                <div>[{T.translate("loginInOrderToBuy")}]</div> :
+                                <button className="cart-product-add-button" id="add-to-cart-button" onClick={(e) => this.onAddToCart(e)}>{T.translate("Buy")}</button>
                             }
                         </div>) 
                    }

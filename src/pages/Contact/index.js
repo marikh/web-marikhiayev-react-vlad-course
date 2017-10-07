@@ -10,6 +10,7 @@ import {
     Section,
     InputField
 } from '../../components/';
+import T from 'i18n-react';
 
 export class Contact extends React.Component{
 
@@ -42,7 +43,7 @@ export class Contact extends React.Component{
                                             updateForm={(fieldName, newValue)=> updateFieldAction(fieldName, newValue)}
                                             required={true}/>
                             
-                            <button type="submit">Submit</button>
+                            <button type="submit">{T.translate("Submit")}</button>
                             </div>
                             <div className={classNames([submitContactFailed && 'contact-form-submit-failed-notification'])}/>
                         </form>
