@@ -1,4 +1,5 @@
-import { actionTypes, loginAction } from './actions'
+import { actionTypes, loginAction, updateFieldAction,userLoggingInAction,
+loginFailedAction,userLoggedInAction } from './actions'
 import { globalActions } from '../../common/globalActions'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
@@ -50,5 +51,53 @@ describe('Login actions',()=>{
         
         return delay(timeThresholdToSuccess).then(() => 
             expect(store.getActions()).toEqual(expectedActions))
+    })
+
+    
+    it('updateFieldAction', () => {
+        
+        const updateFieldAct = updateFieldAction("name", "didula Alik");
+
+        const expectedAction = {
+            type: "LOGIN_FIELD_CHANGED",
+            changedFieldName: "name",
+            newValue: "didula Alik"
+        };
+
+        expect(updateFieldAct).toEqual(expectedAction)
+    })
+    
+    it('contactFormSubmittedAction', () => {
+        
+        const userLoggingInAct = userLoggingInAction();
+
+        const expectedAction = {
+            type: "USER_LOGGING_IN"
+        };
+
+        expect(userLoggingInAct).toEqual(expectedAction)
+    })
+    
+    it('contactFormSubmittedAction', () => {
+        
+        const userLoggedInAct = userLoggedInAction("Fantamas");
+
+        const expectedAction = {
+            type: "USER_LOGGED_IN",
+            loggedInUser: "Fantamas"
+        };
+
+        expect(userLoggedInAct).toEqual(expectedAction)
+    })
+
+    it('contactFormSubmittedAction', () => {
+        
+        const loginFailedAct = loginFailedAction();
+
+        const expectedAction = {
+            type: "LOGIN_FAILED"
+        };
+
+        expect(loginFailedAct).toEqual(expectedAction)
     })
 })
