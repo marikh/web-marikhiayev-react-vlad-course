@@ -23,8 +23,8 @@ describe('Login actions',()=>{
         //// !!!! even though we added thunk as middleware
         // return store.dispatch(loginAction()).then(() => 
         //     expect(store.getActions()).toEqual(expectedActions));
-
-        return store.dispatch(makeAwaitable(loginAction)).then(delayPromise(4000)).then(() => 
+        const timeThresholdToSuccess = 4000;
+        return store.dispatch(makeAwaitable(loginAction)).then(delayPromise(timeThresholdToSuccess)).then(() => 
             expect(store.getActions()).toEqual(expectedActions))
     })
 
@@ -44,7 +44,8 @@ describe('Login actions',()=>{
 
         const store = mockStore({ loginPage: { userName: "Maik", password: "M" } })
         
-        return store.dispatch(makeAwaitable(loginAction)).then(delayPromise(4000)).then(() => 
+        const timeThresholdToSuccess = 4000;
+        return store.dispatch(makeAwaitable(loginAction)).then(delayPromise(timeThresholdToSuccess)).then(() => 
             expect(store.getActions()).toEqual(expectedActions))
     })
 })

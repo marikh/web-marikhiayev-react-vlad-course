@@ -12,8 +12,7 @@ import {
     InputField
 } from '../../components/';
 
-const Login = ({ links, match, location, history, 
-    userName, password, loggingIn, loggedIn, loginFailed, loginAction, updateFieldAction }) =>  {
+export const Login = ({ userName, password, loggingIn, loggedIn, loginFailed, loginAction, updateFieldAction }) =>  {
     
     if(loggedIn){
         return <Redirect to="/" />
