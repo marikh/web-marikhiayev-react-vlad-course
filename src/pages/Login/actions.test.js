@@ -2,7 +2,7 @@ import { actionTypes, loginAction } from './actions'
 import { globalActions } from '../../common/globalActions'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { delayPromise, makeAwaitable } from '../../common/Extensions/promises'
+import { delay, makeAwaitable } from '../../common/Extensions/promises'
 
 
 
@@ -13,18 +13,20 @@ describe('Login actions',()=>{
         const mockStore = configureMockStore(middlewares);
 
         const expectedActions = [
-        { type: actionTypes.USER_LOGGING_IN },
-        { type: globalActions.USER_LOGGED_IN, loggedInUser: "Marik" }
+            { type: actionTypes.USER_LOGGING_IN },
+            { type: globalActions.USER_LOGGED_IN, loggedInUser: "Marik" }
         ]
 
         const store = mockStore({ loginPage: { userName: "Marik", password: "M" } })
 
-        //// !!!! isn't working because store.dispatch(loginAction()) doesn't return promise
-        //// !!!! even though we added thunk as middleware
-        // return store.dispatch(loginAction()).then(() => 
-        //     expect(store.getActions()).toEqual(expectedActions));
+        ////  loginAction() isn't a promise, so cant use "then" (even though we added thunk as middleware)
+        //  return store.dispatch(loginAction()).then(() => 
+        //  expect(store.getActions()).toEqual(expectedActions));
+
         const timeThresholdToSuccess = 4000;
-        return store.dispatch(makeAwaitable(loginAction)).then(delayPromise(timeThresholdToSuccess)).then(() => 
+        store.dispatch(makeAwaitable(loginAction));
+            
+        return delay(timeThresholdToSuccess).then(() => 
             expect(store.getActions()).toEqual(expectedActions))
     })
 
@@ -37,15 +39,16 @@ describe('Login actions',()=>{
         { type: actionTypes.LOGIN_FAILED }
         ]
         
-        //// !!!! isn't working because store.dispatch(loginAction()) doesn't return promise
-        //// !!!! even though we added thunk as middleware
-        // return store.dispatch(loginAction()).then(() => 
-        //     expect(store.getActions()).toEqual(expectedActions));
+        ////  loginAction() isn't a promise, so cant use "then" (even though we added thunk as middleware)
+        //  return store.dispatch(loginAction()).then(() => 
+        //  expect(store.getActions()).toEqual(expectedActions));
 
         const store = mockStore({ loginPage: { userName: "Maik", password: "M" } })
         
         const timeThresholdToSuccess = 4000;
-        return store.dispatch(makeAwaitable(loginAction)).then(delayPromise(timeThresholdToSuccess)).then(() => 
+         store.dispatch(makeAwaitable(loginAction));
+        
+        return delay(timeThresholdToSuccess).then(() => 
             expect(store.getActions()).toEqual(expectedActions))
     })
 })

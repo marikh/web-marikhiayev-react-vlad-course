@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import ConnectedLogin,{Login} from '../../pages/Login/';
 import {createStore} from 'redux';
 import thunk from 'redux-thunk';
-import { delayPromise } from '../../common/Extensions/promises'
+import { delay } from '../../common/Extensions/promises'
 
 const MENU_INITIAL_STATE = {showProtectedLinks : false};
 const LOGIN_INITIAL_STATE = {
@@ -53,7 +53,10 @@ describe('contact outer tests', () => {
         // Test if my store dispatched the expected actions        
         const timeThresholdToSuccess  = 4000;
         const actions = store.getActions();
-        return delayPromise(timeThresholdToSuccess).then(() =>expect(actions).toEqual([userLoggingInAction, userLoggedInAction]));
+        
+        return delay(timeThresholdToSuccess).then(() =>
+            expect(actions).toEqual([userLoggingInAction, userLoggedInAction])
+        );
     })
 
    it(`check login should fail`, () => {
@@ -77,8 +80,13 @@ describe('contact outer tests', () => {
         firstProductDeleteButton.simulate('submit');
 
         // Test if my store dispatched the expected actions
+        const timeThresholdToSuccess  = 4000;
         const actions = store.getActions();
-        expect(actions).toEqual([userLoggingInAction, loginFailedAction]);
+        
+
+        return delay(timeThresholdToSuccess).then(() =>
+            expect(actions).toEqual([userLoggingInAction, loginFailedAction])
+        );
     })
 })
 
