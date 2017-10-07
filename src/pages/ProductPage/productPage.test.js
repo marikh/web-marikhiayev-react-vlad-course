@@ -11,8 +11,8 @@ import { delay } from '../../common/Extensions/promises'
 
 const MENU_INITIAL_STATE = {showProtectedLinks : false};
 const PRODUCTPAGE_INITIAL_STATE = {
-  productId : undefined,
-  canAddToCart : false
+  productId : "123123-234-2341-123123-123123",
+  canAddToCart : true
 };
 
 const productsFullData = [
@@ -44,12 +44,18 @@ describe('product outer tests', () => {
     
 
      beforeEach(()=>{
+        if(wrapper != null)
+            wrapper.unmount();
+
         store = mockStore(initialState);
         wrapper = mount( <Provider store={store}>
                             <MemoryRouter initialEntries={[ '/products/123123-234-2341-123123-123123' ]}>
-                                    <Route component={ProductPage} path="/products/:id" />
+                                <Route render={({match}) => <ConnectedProductPage props={{match: match}}/>} path="/products/:id" />
                             </MemoryRouter>
                         </Provider> );
+
+        // good examples repository - mock routing params:
+        //  https://github.com/ReactTraining/react-router/blob/b18b9dd418a12f3c175e71dece289ead22ef9a09/packages/react-router/modules/__tests__/Route-test.js#L81
     })
 
     it("has Layout", () => {
@@ -60,37 +66,43 @@ describe('product outer tests', () => {
         expect(wrapper.find(Section).length).toBeGreaterThan(0)
     })
 
+    it(`check callback navigatedToProductPageAction called componentWillMount`, () => {
+
+        const navigatedToProductPageAction = {
+            type: "NAVIGATED_TO_PRODUCT_PAGE",
+            productId: "123123-234-2341-123123-123123" 
+        };  
+
+        // Test if my store dispatched the expected actions
+        const actions = store.getActions();
+        expect(actions).toEqual([navigatedToProductPageAction]);
+    })
+
     it(`check buy click`, () => {
 
+        const navigatedToProductPageAction = {
+            type: "NAVIGATED_TO_PRODUCT_PAGE",
+            productId: "123123-234-2341-123123-123123" 
+        };  
+
         const addProductToCartAction = { type: "ADD_PRODUCT_TO_CART",
-            addedProductId: "newProductIdAddedToCart" };
+            addedProductId: "123123-234-2341-123123-123123" };
 
         const firstProductDeleteButton = wrapper.find('button[id="add-to-cart-button"]').first();
         firstProductDeleteButton.simulate('click');
 
         // Test if my store dispatched the expected actions     
         const actions = store.getActions();
-        return expect(actions).toEqual([addProductToCartAction]);
+        return expect(actions).toEqual([navigatedToProductPageAction,addProductToCartAction]);
     })
 
-    it(`check callback navigatedToProductPageAction called componentWillMount`, () => {
-
-        const unloadContactFormActionType = {
-            type: "NAVIGATED_TO_PRODUCT_PAGE",
-            productId: "123123-234-2341-123123-123123"
-        };  
-
-        // Test if my store dispatched the expected actions
-        const actions = store.getActions();
-        expect(actions).toEqual([unloadContactFormActionType]);
-    })
 })
 
 describe('product Shallow Render',()=>{
     let wrapper;
 
     beforeEach(()=>{
-        wrapper = shallow(<ProductPage />);
+        wrapper = shallow(<ConnectedProductPage />);
     })
 
     it('render the DUMB component', () => {
@@ -105,11 +117,11 @@ describe('product snapshot tests', () => {
         const store = mockStore(initialState);
 
         const tree = renderer.create(
-            <Provider store={store}>
-                <MemoryRouter>
-                    <ConnectedProductPage />
+             <Provider store={store}>
+                <MemoryRouter initialEntries={[ '/products/123123-234-2341-123123-123123' ]}>
+                    <Route render={({match}) => <ConnectedProductPage props={{match: match}}/>} path="/products/:id" />
                 </MemoryRouter>
-            </Provider>
+            </Provider> 
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

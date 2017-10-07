@@ -106,7 +106,38 @@ exports[`product snapshot tests test weird snapshot 1`] = `
       className="raised-2 section"
     >
       <div>
-        NoSuchProduct
+        <h2
+          className="heading heading-2"
+        >
+          Greek amphora 1
+        </h2>
+        <div
+          className="product-page-image"
+          src="//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg"
+          style={
+            Object {
+              "backgroundImage": "url(//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg)",
+            }
+          }
+        />
+        <p>
+          Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut. Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.
+        </p>
+        <div>
+          Price
+          :
+          <span>
+             
+            101K USD
+          </span>
+        </div>
+        <button
+          className="cart-product-add-button"
+          id="add-to-cart-button"
+          onClick={[Function]}
+        >
+          Buy
+        </button>
       </div>
     </div>
   </section>
