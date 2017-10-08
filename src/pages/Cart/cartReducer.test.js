@@ -4,8 +4,8 @@ import { cartActionTypes } from './actions'
 import { productsActionTypes } from '../Products/actions'
 
 const productsIDs = [
-    '123123-234-2341-123123-123123',
-    '123123-12342-456456-123123-123123',
+    { productId: '123123-234-2341-123123-123123', cartItemId: 1 },
+    { productId: '123123-12342-456456-123123-123123', cartItemId: 2 }
 ];
 
 const TEST_INITIAL_STATE = productsIDs;
@@ -42,19 +42,22 @@ describe('cartReducer test', () => {
             addedProductId: "testProductID"
         }
 
+        const newExpectedCartProduct = { productId : "testProductID", 
+          cartItemId : TEST_INITIAL_STATE.reduce((maxId, product) => Math.max(product.cartItemId, maxId), -1) + 1 }
+
         expect(cartReducer(TEST_INITIAL_STATE, addProductToCartAction))
-        .toEqual([ ...TEST_INITIAL_STATE, "testProductID"])  
+        .toEqual([ ...TEST_INITIAL_STATE, newExpectedCartProduct])  
     })
     
     it('deleteProductFromCart action', () => {
         
         const deleteProductFromCartAction = {
             type: cartActionTypes.DELETE_PRODUCT_FROM_CART,
-            productId: '123123-234-2341-123123-123123'
+            cartItemId: 1
         }
 
         expect(cartReducer(TEST_INITIAL_STATE, deleteProductFromCartAction))
-        .toEqual(TEST_INITIAL_STATE.filter(cartProductId => cartProductId !== '123123-234-2341-123123-123123'))  
+        .toEqual(TEST_INITIAL_STATE.filter(cartProduct => cartProduct.cartItemId !== deleteProductFromCartAction.cartItemId))
     })
 
     
@@ -66,7 +69,7 @@ describe('cartReducer test', () => {
         }
 
         expect(cartReducer(TEST_INITIAL_STATE, deleteProductGloballyAction))
-        .toEqual(TEST_INITIAL_STATE.filter(cartProductId => cartProductId !== '123123-234-2341-123123-123123'
+        .toEqual(TEST_INITIAL_STATE.filter(cartProduct => cartProduct.productId !== '123123-234-2341-123123-123123'
       ))  
     })
 
@@ -76,8 +79,9 @@ describe('cartReducer test', () => {
     })
     
     it('getCartProductsSelector with specific ID', () => {
-        const state = {cart: ['123123-234-2341-123123-123123'], allProducts: productsFullData };
+        const state = {cart: [{ productId: '123123-234-2341-123123-123123', cartItemId: 1 }], allProducts: productsFullData };
         expect(getCartProductsSelector(state)).toEqual([{
+        cartItemId: 1,
         id: '123123-234-2341-123123-123123',
         name: 'Greek amphora 1',
         imageUrl: '//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg',

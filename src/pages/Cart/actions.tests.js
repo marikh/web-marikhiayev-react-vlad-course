@@ -20,7 +20,7 @@ describe('Cart actions',()=>{
 
         const expectedAction = {
             type: "DELETE_PRODUCT_FROM_CART",
-            productId: "didula Alik"
+            cartItemId: "didula Alik"
         };
 
         expect(deleteAct).toEqual(expectedAction)

@@ -122,13 +122,13 @@ exports[`Cart snapshot tests test weird snapshot 1`] = `
           className="raised-2 card product-card"
           style={
             Object {
-              "backgroundImage": "url(//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg)",
+              "backgroundImage": "url(undefined)",
             }
           }
         >
           <a
             className="product-wrapping-link"
-            href="/products/123123-234-2341-123123-123123"
+            href="/products/undefined"
             onClick={[Function]}
           >
             <div
@@ -136,20 +136,14 @@ exports[`Cart snapshot tests test weird snapshot 1`] = `
             >
               <p
                 className="product-title"
-              >
-                Greek amphora 1
-              </p>
+              />
               <p
                 className="product-price"
-              >
-                101K USD
-              </p>
+              />
             </div>
             <p
               className="product-bottom-desc"
-            >
-              Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.
-            </p>
+            />
           </a>
           <button
             className="cart-product-delete-button"
@@ -163,13 +157,13 @@ exports[`Cart snapshot tests test weird snapshot 1`] = `
           className="raised-2 card product-card"
           style={
             Object {
-              "backgroundImage": "url(//c1.staticflickr.com/5/4215/35504896635_ec1a78af43_b.jpg)",
+              "backgroundImage": "url(undefined)",
             }
           }
         >
           <a
             className="product-wrapping-link"
-            href="/products/123123-12342-456456-123123-123123"
+            href="/products/undefined"
             onClick={[Function]}
           >
             <div
@@ -177,20 +171,14 @@ exports[`Cart snapshot tests test weird snapshot 1`] = `
             >
               <p
                 className="product-title"
-              >
-                Greek amphora 2
-              </p>
+              />
               <p
                 className="product-price"
-              >
-                102K USD
-              </p>
+              />
             </div>
             <p
               className="product-bottom-desc"
-            >
-              Cupidatat irure magna magna in Lorem Lorem est tempor tempor ut.
-            </p>
+            />
           </a>
           <button
             className="cart-product-delete-button"

@@ -8,7 +8,7 @@ export const addProductToCart = (addedProductId) => ({
     addedProductId: addedProductId
 })
 
-export const deleteProductFromCart = (productId) => ({
+export const deleteProductFromCart = (cartItemId) => ({
     type: cartActionTypes.DELETE_PRODUCT_FROM_CART,
-    productId: productId
+    cartItemId: cartItemId
 })

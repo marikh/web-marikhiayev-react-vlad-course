@@ -17,7 +17,7 @@ export const Cart = ({ links, match, location, products, deleteProductFromCart }
     <Layout heroContent={CartHeroArea}>
         <Section>
             <div className="products-horizontal-gallery">
-                { products.map(({ id, name, imageUrl, shortDesc, price }, index) => (
+                { products.map(({ id, name, imageUrl, shortDesc, price, cartItemId }, index) => (
                     <Card key={`product-${id}-${index}`} className="product-card" style={{ backgroundImage: `url(${imageUrl})`}}>
                         <Link to={`/products/${id}`} className="product-wrapping-link">
                             <div className="product-top-title">
@@ -26,7 +26,7 @@ export const Cart = ({ links, match, location, products, deleteProductFromCart }
                             </div>
                             <p className="product-bottom-desc">{ shortDesc }</p>
                         </Link>
-                        <button className="cart-product-delete-button" id="remove-button" onClick={(e) => deleteProductFromCart(id)}>{T.translate("Delete")}</button>
+                        <button className="cart-product-delete-button" id="remove-button" onClick={(e) => deleteProductFromCart(cartItemId)}>{T.translate("Delete")}</button>
                     </Card>
                   ))
                 }         
