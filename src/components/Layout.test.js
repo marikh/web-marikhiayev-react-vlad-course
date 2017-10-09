@@ -1,5 +1,5 @@
 import Layout from './Layout';
-import { mount, shallow, dive } from "enzyme";
+import { mount, shallow } from "enzyme";
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom'
 import { Header, Body, Footer, Menu } from './';
