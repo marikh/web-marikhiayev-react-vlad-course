@@ -1,5 +1,6 @@
-import { configure } from '@storybook/react';
+import React from 'react';
 
+import { configure, addDecorator} from '@storybook/react';
 
 import 'normalize.css/normalize.css';
 import 'font-awesome/css/font-awesome.css';
@@ -14,6 +15,13 @@ import '../src/components/Menu/menu.css';
 import '../src/components/Section/section.css';
 import '../src/components/SocialLinks/social-links.css';
 import '../src/pages/Products/products.css';
+
+
+addDecorator(story => (
+    <div className="App">
+        {story()}
+    </div>
+  ))
 
 function loadStories() {
   require('../src/stories/body'),

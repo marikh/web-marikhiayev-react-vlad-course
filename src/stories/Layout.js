@@ -74,3 +74,112 @@
 //     )
 //   }
 // }
+
+
+
+
+
+
+import React from 'react';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+import configureStore from 'redux-mock-store'
+
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
+import {Heading, HeroArea, Layout, Section} from '../components/';
+// import {
+//     HomeFooter,
+//     HomeHeroArea    
+// } from '../components/Home/components/';
+
+const customFooter = () => {
+    return (
+        <div style={{ textAlign: "center"}}>
+            footerContent property content of Layout
+        </div>
+    )
+};
+
+const hero = () => (<HeroArea>
+        <Heading size={1}>
+            Here: HeroArea component is the content of heroContent (property of Layout)
+        </Heading>
+    </HeroArea>);
+
+storiesOf("Layout", module)
+  .add('Layout with hero and custom footer defined', () => {
+
+    const mockStore = configureStore()
+    const INITIAL_STATE = {showProtectedLinks : false};
+
+    const store= mockStore({ menu: INITIAL_STATE});
+
+    return  <Provider store={store}>
+                <MemoryRouter>
+                    <Layout 
+                        footerContent={customFooter}
+                        heroContent={hero}>
+                        Some content (Body component 's children )
+                    </Layout>
+                </MemoryRouter>
+            </Provider>;
+  }
+  )
+  .add('Layout without custom footer defined (default is shown)', () => {
+
+    const mockStore = configureStore()
+    const INITIAL_STATE = {showProtectedLinks : false};
+
+    const store= mockStore({ menu: INITIAL_STATE});
+
+    return  <Provider store={store}>
+                <MemoryRouter>
+                    <Layout 
+                        heroContent={hero}>                        
+                        Some content (Body component 's children )
+                    </Layout>
+                </MemoryRouter>
+            </Provider>;
+  }
+  )
+  .add('Layout without hero defined', () => {
+
+    const mockStore = configureStore()
+    const INITIAL_STATE = {showProtectedLinks : false};
+
+    const store= mockStore({ menu: INITIAL_STATE});
+
+    return  <Provider store={store}>
+                <MemoryRouter>
+                    <Layout 
+                        footerContent={customFooter}>
+                        Some content (Body component 's children )
+                    </Layout>
+                </MemoryRouter>
+            </Provider>;
+  }
+  )
+  .add('Layout without custom footer defined (default is shown) and without hero defined', () => {
+
+    const mockStore = configureStore()
+    const INITIAL_STATE = {showProtectedLinks : false};
+
+    const store= mockStore({ menu: INITIAL_STATE});
+
+    return  <Provider store={store}>
+                <MemoryRouter>
+                    <Layout>                        
+                        Some content (Body component 's children )
+                    </Layout>
+                </MemoryRouter>
+            </Provider>;
+  }
+  )
+
+
+
+
+

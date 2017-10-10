@@ -1,122 +1,1496 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button with some emoji 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
+exports[`Storyshots Body (What's between hero and footer) with text 1`] = `
+<div
+  className="App"
 >
-  😀 😎 👍 💯
-</button>
-`;
-
-exports[`Storyshots Button with text 1`] = `
-<button
-  className="css-1yjiefr"
-  onClick={[Function]}
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Welcome to Storybook 1`] = `
-<article
-  className="css-1fqbdip"
->
-  <h1
-    className="css-nil"
+  <section
+    className="App-body"
   >
-    Welcome to storybook
-  </h1>
-  <p>
-    This is a UI component dev environment for your app.
-  </p>
-  <p>
-    We've added some basic stories inside the
-     
-    <code
-      className="css-mteq83"
+    In computing, React (sometimes styled React.js or ReactJS) is a JavaScript library[2] for building user interfaces. It is maintained by Facebook, Instagram and a community of individual developers and corporations.[3][4][5] React allows developers to create large web-applications that use data and can change over time without reloading the page. It aims primarily to provide speed, simplicity, and scalability. React processes only user interfaces in applications. This corresponds to View in the Model-View-Controller (MVC) pattern, and can be used in combination with other JavaScript libraries or frameworks in MVC, such as AngularJS.[6]
+  </section>
+</div>
+`;
+
+exports[`Storyshots Card empty 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="raised-2 card"
+  />
+</div>
+`;
+
+exports[`Storyshots Footer simple 1`] = `
+<div
+  className="App"
+>
+  <footer
+    className="App-footer"
+  >
+    <ul>
+      <li>
+        dummy item
+      </li>
+      <li>
+        dummy item
+      </li>
+      <li>
+        dummy item
+      </li>
+      <li>
+        dummy item
+      </li>
+    </ul>
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Header Closed menu header 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <div
+      className="App-menubar"
     >
-      src/stories
-    </code>
-     
-    directory.
-    <br />
-    A story is a single state of one or more UI components. You can have as many stories as you want.
-    <br />
-    (Basically a story is like a visual test case.)
-  </p>
-  <p>
-    See these sample
-     
-    <a
-      className="css-ca0824"
+      <label
+        className="hamburger-icon fa fa-bars"
+        onClick={[Function]}
+      />
+      <div
+        className="menu-content"
+      >
+        <div
+          className="links-container"
+        >
+          <a
+            className="page-link"
+            href="/"
+            onClick={[Function]}
+          >
+            <span>
+              Home
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            <span>
+              About
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/products"
+            onClick={[Function]}
+          >
+            <span>
+              Products
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/contact"
+            onClick={[Function]}
+          >
+            <span>
+              Contact
+            </span>
+          </a>
+          <a
+            className="page-link"
+            href="/login"
+            onClick={[Function]}
+          >
+            <span>
+              SignIn
+            </span>
+          </a>
+        </div>
+        <div
+          className="socialLinks"
+        >
+          <div
+            className="social-links"
+          >
+            <a
+              className="fa fa-facebook"
+              href="facebook.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-github"
+              href="github.com"
+              target="_blank"
+            />
+            <a
+              className="fa fa-envelope"
+              href="vnovick@gmail.comm"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="overlay"
+      />
+    </div>
+    <section
+      className="App-subheader"
+    />
+  </header>
+</div>
+`;
+
+exports[`Storyshots Heading size 1 - english 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h1
+      className="heading heading-1"
+    >
+      Blog Posts
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 1 - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h1
+      className="heading heading-1"
+    >
+      פרסומי בלוג
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 2 - english 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h2
+      className="heading heading-2"
+    >
+      Blog Posts
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 2 - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h2
+      className="heading heading-2"
+    >
+      פרסומי בלוג
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 3 - english 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h3
+      className="heading heading-3"
+    >
+      Blog Posts
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 3 - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h3
+      className="heading heading-3"
+    >
+      פרסומי בלוג
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 4 - english 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h4
+      className="heading heading-4"
+    >
+      Blog Posts
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 4 - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h4
+      className="heading heading-4"
+    >
+      פרסומי בלוג
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 5 - english 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h5
+      className="heading heading-5"
+    >
+      Blog Posts
+    </h5>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading size 5 - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h5
+      className="heading heading-5"
+    >
+      פרסומי בלוג
+    </h5>
+  </div>
+</div>
+`;
+
+exports[`Storyshots HeroArea with content - Heading component (size 1) 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App-hero"
+  >
+    <h1
+      className="heading heading-1"
+    >
+      Blog Posts
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Storyshots HeroArea without content - just background 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App-hero"
+  />
+</div>
+`;
+
+exports[`Storyshots InputField non text area type - password 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field form-dirty"
+    >
+      <input
+        label={null}
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value="sasfsdfsdfa"
+      />
+      <label />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField non text area type - text 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field form-dirty"
+    >
+      <input
+        label={null}
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="text"
+        value="bla bla bla"
+      />
+      <label />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField required (press on "Submit") 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <form>
+      <div
+        className="input-field"
+      >
+        <input
+          label={null}
+          name={undefined}
+          onChange={[Function]}
+          required={true}
+          type="password"
+          value=""
+        />
+        <label />
+      </div>
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField textarea 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field form-dirty"
+    >
+      <textarea
+        label={null}
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="textarea"
+        value="bla bla bla"
+      />
+      <label />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField with label - dirty - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field form-dirty"
+    >
+      <input
+        label="סיסמה"
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value="bla bla bla"
+      />
+      <label>
+        סיסמה
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField with label - dirty 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field form-dirty"
+    >
+      <input
+        label="Password"
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value="bla bla bla"
+      />
+      <label>
+        Password
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField with label - non dirty - hebrew 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field"
+    >
+      <input
+        label="סיסמה"
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value={undefined}
+      />
+      <label>
+        סיסמה
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField with label - non dirty 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field"
+    >
+      <input
+        label="Password"
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value={undefined}
+      />
+      <label>
+        Password
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField without label - dirty 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field form-dirty"
+    >
+      <input
+        label={null}
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value="bla bla bla"
+      />
+      <label />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputField without label - non dirty 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="input-field"
+    >
+      <input
+        label={null}
+        name={undefined}
+        onChange={[Function]}
+        required={undefined}
+        type="password"
+        value={undefined}
+      />
+      <label />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Layout with hero and custom footer defined 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App"
+    onClick={[Function]}
+  >
+    <header
+      className="App-header"
+    >
+      <div
+        className="App-menubar"
+      >
+        <label
+          className="hamburger-icon fa fa-bars"
+          onClick={[Function]}
+        />
+        <div
+          className="menu-content"
+        >
+          <div
+            className="links-container"
+          >
+            <a
+              className="page-link"
+              href="/"
+              onClick={[Function]}
+            >
+              <span>
+                דף הבית
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/about"
+              onClick={[Function]}
+            >
+              <span>
+                אודות
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/products"
+              onClick={[Function]}
+            >
+              <span>
+                מוצרים
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/contact"
+              onClick={[Function]}
+            >
+              <span>
+                צור קשר
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/login"
+              onClick={[Function]}
+            >
+              <span>
+                התחבר
+              </span>
+            </a>
+          </div>
+          <div
+            className="socialLinks"
+          >
+            <div
+              className="social-links"
+            >
+              <a
+                className="fa fa-facebook"
+                href="facebook.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-github"
+                href="github.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-envelope"
+                href="vnovick@gmail.comm"
+                target="_blank"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="overlay"
+        />
+      </div>
+      <section
+        className="App-subheader"
+      >
+        <div
+          className="App-hero"
+        >
+          <h1
+            className="heading heading-1"
+          >
+            Here: HeroArea component is the content of heroContent (property of Layout)
+          </h1>
+        </div>
+      </section>
+    </header>
+    <section
+      className="App-body"
+    >
+      Some content (Body component 's children )
+    </section>
+    <footer
+      className="App-footer"
+    >
+      <div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        footerContent property content of Layout
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Layout without custom footer defined (default is shown) 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App"
+    onClick={[Function]}
+  >
+    <header
+      className="App-header"
+    >
+      <div
+        className="App-menubar"
+      >
+        <label
+          className="hamburger-icon fa fa-bars"
+          onClick={[Function]}
+        />
+        <div
+          className="menu-content"
+        >
+          <div
+            className="links-container"
+          >
+            <a
+              className="page-link"
+              href="/"
+              onClick={[Function]}
+            >
+              <span>
+                דף הבית
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/about"
+              onClick={[Function]}
+            >
+              <span>
+                אודות
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/products"
+              onClick={[Function]}
+            >
+              <span>
+                מוצרים
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/contact"
+              onClick={[Function]}
+            >
+              <span>
+                צור קשר
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/login"
+              onClick={[Function]}
+            >
+              <span>
+                התחבר
+              </span>
+            </a>
+          </div>
+          <div
+            className="socialLinks"
+          >
+            <div
+              className="social-links"
+            >
+              <a
+                className="fa fa-facebook"
+                href="facebook.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-github"
+                href="github.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-envelope"
+                href="vnovick@gmail.comm"
+                target="_blank"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="overlay"
+        />
+      </div>
+      <section
+        className="App-subheader"
+      >
+        <div
+          className="App-hero"
+        >
+          <h1
+            className="heading heading-1"
+          >
+            Here: HeroArea component is the content of heroContent (property of Layout)
+          </h1>
+        </div>
+      </section>
+    </header>
+    <section
+      className="App-body"
+    >
+      Some content (Body component 's children )
+    </section>
+    <footer
+      className="App-footer"
+    >
+      <div
+        className="social-links"
+      >
+        <a
+          className="text-link"
+          href="facebook.com"
+          target="_blank"
+        >
+          Facebook
+        </a>
+        <a
+          className="text-link"
+          href="github.com"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className="text-link"
+          href="vnovick@gmail.comm"
+          target="_blank"
+        >
+          Email
+        </a>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Layout without custom footer defined (default is shown) and without hero defined 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App"
+    onClick={[Function]}
+  >
+    <header
+      className="App-header"
+    >
+      <div
+        className="App-menubar"
+      >
+        <label
+          className="hamburger-icon fa fa-bars"
+          onClick={[Function]}
+        />
+        <div
+          className="menu-content"
+        >
+          <div
+            className="links-container"
+          >
+            <a
+              className="page-link"
+              href="/"
+              onClick={[Function]}
+            >
+              <span>
+                דף הבית
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/about"
+              onClick={[Function]}
+            >
+              <span>
+                אודות
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/products"
+              onClick={[Function]}
+            >
+              <span>
+                מוצרים
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/contact"
+              onClick={[Function]}
+            >
+              <span>
+                צור קשר
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/login"
+              onClick={[Function]}
+            >
+              <span>
+                התחבר
+              </span>
+            </a>
+          </div>
+          <div
+            className="socialLinks"
+          >
+            <div
+              className="social-links"
+            >
+              <a
+                className="fa fa-facebook"
+                href="facebook.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-github"
+                href="github.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-envelope"
+                href="vnovick@gmail.comm"
+                target="_blank"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="overlay"
+        />
+      </div>
+      <section
+        className="App-subheader"
+      />
+    </header>
+    <section
+      className="App-body"
+    >
+      Some content (Body component 's children )
+    </section>
+    <footer
+      className="App-footer"
+    >
+      <div
+        className="social-links"
+      >
+        <a
+          className="text-link"
+          href="facebook.com"
+          target="_blank"
+        >
+          Facebook
+        </a>
+        <a
+          className="text-link"
+          href="github.com"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className="text-link"
+          href="vnovick@gmail.comm"
+          target="_blank"
+        >
+          Email
+        </a>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Layout without hero defined 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App"
+    onClick={[Function]}
+  >
+    <header
+      className="App-header"
+    >
+      <div
+        className="App-menubar"
+      >
+        <label
+          className="hamburger-icon fa fa-bars"
+          onClick={[Function]}
+        />
+        <div
+          className="menu-content"
+        >
+          <div
+            className="links-container"
+          >
+            <a
+              className="page-link"
+              href="/"
+              onClick={[Function]}
+            >
+              <span>
+                דף הבית
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/about"
+              onClick={[Function]}
+            >
+              <span>
+                אודות
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/products"
+              onClick={[Function]}
+            >
+              <span>
+                מוצרים
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/contact"
+              onClick={[Function]}
+            >
+              <span>
+                צור קשר
+              </span>
+            </a>
+            <a
+              className="page-link"
+              href="/login"
+              onClick={[Function]}
+            >
+              <span>
+                התחבר
+              </span>
+            </a>
+          </div>
+          <div
+            className="socialLinks"
+          >
+            <div
+              className="social-links"
+            >
+              <a
+                className="fa fa-facebook"
+                href="facebook.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-github"
+                href="github.com"
+                target="_blank"
+              />
+              <a
+                className="fa fa-envelope"
+                href="vnovick@gmail.comm"
+                target="_blank"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="overlay"
+        />
+      </div>
+      <section
+        className="App-subheader"
+      />
+    </header>
+    <section
+      className="App-body"
+    >
+      Some content (Body component 's children )
+    </section>
+    <footer
+      className="App-footer"
+    >
+      <div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        footerContent property content of Layout
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Menu Opened menu header - when logged in 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App-menubar"
+  >
+    <label
+      className="hamburger-icon fa fa-bars"
       onClick={[Function]}
-      role="button"
-      tabIndex="0"
+    />
+    <div
+      className="menu-content opened"
     >
-      stories
-    </a>
-     
-    for a component called
-     
-    <code
-      className="css-mteq83"
+      <div
+        className="links-container"
+      >
+        <a
+          className="page-link"
+          href="/"
+          onClick={[Function]}
+        >
+          <span>
+            דף הבית
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/about"
+          onClick={[Function]}
+        >
+          <span>
+            אודות
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/products"
+          onClick={[Function]}
+        >
+          <span>
+            מוצרים
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/contact"
+          onClick={[Function]}
+        >
+          <span>
+            צור קשר
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/cart"
+          onClick={[Function]}
+        >
+          <span>
+            עגלת קניות
+          </span>
+        </a>
+      </div>
+      <div
+        className="socialLinks"
+      >
+        <div
+          className="social-links"
+        >
+          <a
+            className="fa fa-facebook"
+            href="facebook.com"
+            target="_blank"
+          />
+          <a
+            className="fa fa-github"
+            href="github.com"
+            target="_blank"
+          />
+          <a
+            className="fa fa-envelope"
+            href="vnovick@gmail.comm"
+            target="_blank"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="overlay active"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Menu Opened menu header - when not logged in 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App-menubar"
+  >
+    <label
+      className="hamburger-icon fa fa-bars"
+      onClick={[Function]}
+    />
+    <div
+      className="menu-content opened"
     >
-      Button
-    </code>
-    .
-  </p>
-  <p>
-    Just like that, you can add your own components as stories.
-    <br />
-    You can also edit those components and see changes right away.
-    <br />
-    (Try editing the 
-    <code
-      className="css-mteq83"
-    >
-      Button
-    </code>
-     stories located at 
-    <code
-      className="css-mteq83"
-    >
-      src/stories/index.js
-    </code>
-    .)
-  </p>
-  <p>
-    Usually we create stories with smaller UI components in the app.
-    <br />
-    Have a look at the
-     
+      <div
+        className="links-container"
+      >
+        <a
+          className="page-link"
+          href="/"
+          onClick={[Function]}
+        >
+          <span>
+            דף הבית
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/about"
+          onClick={[Function]}
+        >
+          <span>
+            אודות
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/products"
+          onClick={[Function]}
+        >
+          <span>
+            מוצרים
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/contact"
+          onClick={[Function]}
+        >
+          <span>
+            צור קשר
+          </span>
+        </a>
+        <a
+          className="page-link"
+          href="/login"
+          onClick={[Function]}
+        >
+          <span>
+            התחבר
+          </span>
+        </a>
+      </div>
+      <div
+        className="socialLinks"
+      >
+        <div
+          className="social-links"
+        >
+          <a
+            className="fa fa-facebook"
+            href="facebook.com"
+            target="_blank"
+          />
+          <a
+            className="fa fa-github"
+            href="github.com"
+            target="_blank"
+          />
+          <a
+            className="fa fa-envelope"
+            href="vnovick@gmail.comm"
+            target="_blank"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="overlay active"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Section empty 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="raised-2 section"
+  />
+</div>
+`;
+
+exports[`Storyshots Section with text 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="raised-2 section"
+  >
+    "Never Gonna Give You Up" is a single by Rick Astley, released in 1987, written and produced by Stock Aitken Waterman. The song was released as the first single from his debut album, Whenever You Need Somebody (1987). The song was a worldwide number-one hit, initially in the singer's native United Kingdom in 1987, where it stayed at the top of the chart for five weeks and was the best-selling single of that year. It eventually topped the charts in 25 countries, including the United States and West Germany.[5] The song won Best British Single at the 1988 Brit Awards. In 1990, Nick Lowe quoted from the song and called it "ghastly" in the lyrics to "All Men Are Liars," a song on his album Party of One. In 2004, "Never Gonna Give You Up" was voted number 28 in 50 Most Awesomely Bad Songs... Ever by VH1. The music video for the song has become the basis for the "Rickrolling" Internet meme. In 2008, Astley won the MTV Europe Music Award for Best Act Ever with the song, as a result of collective voting from thousands of people on the internet, due to the popular phenomenon of Rickrolling. It was also featured as a downloadable track for the Rock Band series. The song is considered Astley's signature song and it is often played at the end of Astley's live concerts. During a live performance, usually on the last verse, Rick sometimes shouts out to the audience that he is feeling "bloody marvellous" or in other countries that he is feeling "fantastic" after the line "And if you ask me how I'm feeling" to have some banter with the audience.
+  </div>
+</div>
+`;
+
+exports[`Storyshots SocialLinks deafult links presentation 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="social-links"
+  >
     <a
-      className="css-ca0824"
-      href="https://storybook.js.org/basics/writing-stories"
-      rel="noopener noreferrer"
+      className="text-link"
+      href="facebook.com"
       target="_blank"
     >
-      Writing Stories
+      Facebook
     </a>
-     
-    section in our documentation.
-  </p>
-  <p
-    className="css-bwdon3"
-  >
-    <b>
-      NOTE:
-    </b>
-    <br />
-    Have a look at the
-     
-    <code
-      className="css-mteq83"
+    <a
+      className="text-link"
+      href="github.com"
+      target="_blank"
     >
-      .storybook/webpack.config.js
-    </code>
-     
-    to add webpack loaders and plugins you are using in this project.
-  </p>
-</article>
+      Github
+    </a>
+    <a
+      className="text-link"
+      href="vnovick@gmail.comm"
+      target="_blank"
+    >
+      Email
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SocialLinks links with presentation type of "icons" 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="social-links"
+  >
+    <a
+      className="fa fa-facebook"
+      href="facebook.com"
+      target="_blank"
+    />
+    <a
+      className="fa fa-github"
+      href="github.com"
+      target="_blank"
+    />
+    <a
+      className="fa fa-envelope"
+      href="vnovick@gmail.comm"
+      target="_blank"
+    />
+  </div>
+</div>
 `;

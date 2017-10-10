@@ -1,10 +1,24 @@
-// .App-hero {
-//     background-image: url(https://i.pinimg.com/originals/d8/a8/6c/d8a86ceb9d31f6f91a6eec24facac178.jpg);
-//     height: 300px;
-//     background-size: cover;
-//     background-position: center;
-//     color: #fafafa;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+import React from 'react';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
+import HeroArea from '../components/HeroArea';
+import Heading from '../components/Heading';
+import T from 'i18n-react';
+
+storiesOf("HeroArea", module)
+  .add('without content - just background', () =>(
+    <HeroArea>
+    </HeroArea>)
+  )
+  .add('with content - Heading component (size 1)', () => (
+    <HeroArea>
+        <Heading size={1}>
+            Blog Posts
+        </Heading>
+    </HeroArea>)
+  )
