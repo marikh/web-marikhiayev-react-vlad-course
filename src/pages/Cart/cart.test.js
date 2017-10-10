@@ -1,19 +1,20 @@
 import { mount, shallow } from "enzyme";
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom'
-import { Layout } from '../../components/';
+import { Layout, Product } from '../../components/';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux';
 import ConnectedCart,{Cart} from '../../pages/Cart/';
 import {createStore} from 'redux';
 
-const productsIDs = [
-    '123123-234-2341-123123-123123',
-    '123123-12342-456456-123123-123123',
+const productsInCart = [
+    { productId: '123123-234-2341-123123-123123', cartItemId: 1 },
+    { productId: '123123-12342-456456-123123-123123', cartItemId: 2 }
 ];
+
 const MENU_INITIAL_STATE = {showProtectedLinks : false};
-const CART_INITIAL_STATE = productsIDs;
+const CART_INITIAL_STATE = productsInCart;
 const products = [
     {
         id: '123123-234-2341-123123-123123',
@@ -61,8 +62,8 @@ describe('Cart outer tests', () => {
         expect(sections.length).toBeGreaterThan(0);
     });
     
-    it("contains remove buttons of products", () => {
-        const removeButtons = wrapper.find("#remove-button");
+    it("contains two Products componenets according to the dummy store", () => {
+        const removeButtons = wrapper.find(Product);
         expect(removeButtons.length).toBe(2);
     });
 
@@ -71,7 +72,7 @@ describe('Cart outer tests', () => {
         const deleteProductAction = {type: 'DELETE_PRODUCT_FROM_CART', 
                                     productId : '123123-234-2341-123123-123123'};
                                     
-        const firstProductDeleteButton = wrapper.find("#remove-button").first();
+        const firstProductDeleteButton = wrapper.find(Product).first().find('button[id="remove-button"]').first();
         firstProductDeleteButton.simulate('click');
 
         // Test if my store dispatched the expected actions

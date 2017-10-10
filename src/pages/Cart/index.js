@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Section, Card, Heading } from '../../components/'
+import { Layout, Section, Card, Heading, Product } from '../../components/'
 import { CartHeroArea } from './components/';
 import './cart.css';
 import { connect } from 'react-redux';
@@ -17,18 +17,9 @@ export const Cart = ({ links, match, location, products, deleteProductFromCart }
     <Layout heroContent={CartHeroArea}>
         <Section>
             <div className="products-horizontal-gallery">
-                { products.map(({ id, name, imageUrl, shortDesc, price, cartItemId }, index) => (
-                    <Card key={`product-${id}-${index}`} className="product-card" style={{ backgroundImage: `url(${imageUrl})`}}>
-                        <Link to={`/products/${id}`} className="product-wrapping-link">
-                            <div className="product-top-title">
-                                <p className="product-title">{ name }</p>
-                                <p className="product-price">{ price }</p>
-                            </div>
-                            <p className="product-bottom-desc">{ shortDesc }</p>
-                        </Link>
-                        <button className="cart-product-delete-button" id="remove-button" onClick={(e) => deleteProductFromCart(cartItemId)}>{T.translate("Delete")}</button>
-                    </Card>
-                  ))
+                { products.map(({ id, name, imageUrl, shortDesc, price, cartItemId }, index) => {
+                    const productProps = { id, name, imageUrl, shortDesc, price, cartItemId, deleteProductFromCart };
+                    return <Product key={`product-${id}-${index}`} {...productProps} />})
                 }         
             </div>
         </Section>

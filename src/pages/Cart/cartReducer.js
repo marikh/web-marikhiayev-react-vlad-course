@@ -1,12 +1,12 @@
 import { cartActionTypes } from './actions'
 import { productsActionTypes } from '../Products/actions'
 
-const productsIDs = [
+const productsInCart = [
     { productId: '123123-234-2341-123123-123123', cartItemId: 1 },
     { productId: '123123-12342-456456-123123-123123', cartItemId: 2 }
 ];
 
-const INITIAL_STATE = productsIDs;
+const INITIAL_STATE = productsInCart;
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {

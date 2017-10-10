@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Section, Card, Heading } from '../../components/'
+import { Layout, Section, Card, Heading, Product } from '../../components/'
 import { ProductsHeroArea } from './components/';
 import './products.css';
 import { connect } from 'react-redux';
@@ -15,18 +15,10 @@ export const Products = ({ links, match, location, products }) => (
     <Layout heroContent={ProductsHeroArea}>
         <Section>
             <div className="products-horizontal-gallery">
-                { products.map(({ id, name, imageUrl, shortDesc, price }, index) => (
-                    <Card key={`product-${id}-${index}`} className="product-card" style={{ backgroundImage: `url(${imageUrl})`}}>
-                        <Link to={`${match.url}/${id}`} className="product-wrapping-link">
-                            <div className="product-top-title">
-                                <p className="product-title">{ name }</p>
-                                <p className="product-price">{ price }</p>
-                            </div>
-                            <p className="product-bottom-desc">{ shortDesc }</p>
-                        </Link>
-                    </Card>
-                  ))
-                }         
+                { products.map(({ id, name, imageUrl, shortDesc, price }, index) => {
+                    const productProps = { id, name, imageUrl, shortDesc, price };
+                    return <Product key={`product-${id}-${index}`} {...productProps} />})
+                }
             </div>
         </Section>
     </Layout>
