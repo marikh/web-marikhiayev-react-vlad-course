@@ -18,7 +18,7 @@ export default (state = INITIAL_STATE, action) => {
         [action.changedFieldName]: action.newValue
       }
 
-    case actionTypes.USER_LOGGING_IN:
+    case globalActions.USER_LOGGING_IN:
       return {
         ...state,
         loggingIn : true,
@@ -34,14 +34,22 @@ export default (state = INITIAL_STATE, action) => {
         loginFailed : false,
       }
 
-    case actionTypes.LOGIN_FAILED:
+    case globalActions.LOGIN_FAILED:
       return {
         ...state,
         loggingIn : false,
         loggedIn: false,
         loginFailed : true,
       }
-
+    
+    case globalActions.LOGGED_OUT:
+      return {
+        ...state,
+        loggingIn : false,
+        loggedIn: false,
+        loginFailed : false,
+      }
+    
     default:
       return state
   }

@@ -12,6 +12,11 @@ export default (state = INITIAL_STATE, action) => {
         showProtectedLinks: true,
       }
 
+    case globalActions.LOGGED_OUT:
+      return {
+        ...state,
+        showProtectedLinks: false,
+      }
     default:
       return state
   }

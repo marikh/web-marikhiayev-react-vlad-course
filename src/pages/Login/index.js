@@ -4,7 +4,8 @@ import './login.css';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import { getUserNameSelector, getPasswordSelector, getLoggingInSelector, getLoggedInSelector, getLoginFailedSelector } from './loginReducer';
-import { loginAction, updateFieldAction } from './actions';
+import { updateFieldAction } from './actions';
+import { loginAction } from '../../common/globalActions';
 import { withRouter, Redirect } from 'react-router-dom';
 import { 
     Layout,

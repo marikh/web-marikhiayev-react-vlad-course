@@ -2,8 +2,6 @@ import loginReducer, {getUserNameSelector, getPasswordSelector,
     getLoggingInSelector, getLoggedInSelector, getLoginFailedSelector}  from './loginReducer';
 
 import { actionTypes } from './actions'
-import { globalActions } from '../../common/globalActions'
-
 
 const TEST_INITIAL_STATE = {
   userName : "",
@@ -54,7 +52,7 @@ describe('loginReducer test', () => {
             userName : "s",
             password : "s@l.com"};
 
-        expect(loginReducer(dirtyState, {type: actionTypes.USER_LOGGING_IN}))
+        expect(loginReducer(dirtyState, {type: "USER_LOGGING_IN"}))
         .toEqual({
             ...dirtyState,
             loggingIn : true,
@@ -69,7 +67,7 @@ describe('loginReducer test', () => {
             userName : "s",
             password : "s@l.com"};
 
-        expect(loginReducer(dirtyState, {type: globalActions.USER_LOGGED_IN}))
+        expect(loginReducer(dirtyState, {type: "USER_LOGGED_IN"}))
         .toEqual({
             ...dirtyState,
             loggingIn : false,
@@ -84,7 +82,7 @@ describe('loginReducer test', () => {
             userName : "s",
             password : "s@l.com"};
 
-        expect(loginReducer(dirtyState, {type: actionTypes.LOGIN_FAILED}))
+        expect(loginReducer(dirtyState, {type: "LOGIN_FAILED"}))
         .toEqual({
             ...dirtyState,
             loggingIn : false,

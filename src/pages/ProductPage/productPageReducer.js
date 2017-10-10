@@ -20,6 +20,12 @@ export default (state = INITIAL_STATE, action) => {
         canAddToCart: true,
       }
 
+    case globalActions.LOGGED_OUT:
+      return {
+        ...state,
+        canAddToCart: false,
+      }
+
     default:
       return state
   }

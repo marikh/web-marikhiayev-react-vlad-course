@@ -4,6 +4,7 @@ import SocialLinks from '../SocialLinks/';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getShowProtectedLinksSelector } from './menuReducer';
+import { logOut } from '../../common/globalActions';
 import './menu.css';
 import T from 'i18n-react';
 
@@ -34,7 +35,7 @@ const navigationLinks = [
     }
 ]
 
-const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProtectedLinks }) => (
+const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProtectedLinks, logOut }) => (
 <div className="App-menubar">
         <label className="hamburger-icon fa fa-bars" onClick={() => open()}/>
         <div className={classNames(['menu-content', menuState && 'opened' ])}>
@@ -52,8 +53,14 @@ const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProt
                     }
                 )}
 
+
+                {  showProtectedLinks && <Link className="page-link" to="/" onClick={() => logOut()}>
+                                            <T.span text={{ key: "LogOut"}}/>
+                                        </Link>
+                }
                 {/*<Link className="page-link" to={{ pathname: '/products', search: 'referral=Amazon'}}>Referral Link</Link>*/}
             </div>
+
             <div className="socialLinks">
                 <SocialLinks links={socialLinks} type="icons"/>
             </div>
@@ -66,4 +73,4 @@ const mapStateToProps = (state) => ({
     showProtectedLinks: getShowProtectedLinksSelector(state),
 })
 
-export default connect(mapStateToProps,)(Menu);
+export default connect(mapStateToProps, { logOut })(Menu);
