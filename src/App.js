@@ -23,7 +23,7 @@ import {
 class App extends Component {
 
   componentWillMount(){
-    T.setTexts(require('./translations/he/translations.json'))
+    T.setTexts(require('./translations/en/translations.json'))
   }
 
   render() {

@@ -1289,6 +1289,15 @@ exports[`Storyshots Menu Opened menu header - when logged in 1`] = `
             עגלת קניות
           </span>
         </a>
+        <a
+          className="page-link"
+          href="/"
+          onClick={[Function]}
+        >
+          <span>
+            התנתק
+          </span>
+        </a>
       </div>
       <div
         className="socialLinks"
