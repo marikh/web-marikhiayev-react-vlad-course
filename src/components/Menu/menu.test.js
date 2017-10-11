@@ -96,10 +96,10 @@ describe('Menu outer tests', () => {
         expect(wrapper.find('a[href="/cart"]').length).toBeGreaterThan(0)
     })
 
-    it("has socialLinks", () => {
+    it("has socialLinks component with link type of 'icons' (each link should be with className='fa fa-${icon}')", () => {
         expect(wrapper.find('div[className="social-links"]')
-                        .find('a').map(a => a.getAttribute('className'))
-                        .every(className => className.contains("fa fa-"))).toEqual(true)
+                        .find('a').map(a => a.prop('className'))
+                        .every(className => className.includes("fa fa-"))).toEqual(true)
     })
     
     it('"overlay" and "active" class applied when menu open (gray overlay beneath the menu all over the screen)', () => {
