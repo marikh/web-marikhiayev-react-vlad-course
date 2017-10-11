@@ -35,7 +35,7 @@ const navigationLinks = [
     }
 ]
 
-const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProtectedLinks, logOut }) => (
+export const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, showProtectedLinks, logOut }) => (
 <div className="App-menubar">
         <label className="hamburger-icon fa fa-bars" onClick={() => open()}/>
         <div className={classNames(['menu-content', menuState && 'opened' ])}>

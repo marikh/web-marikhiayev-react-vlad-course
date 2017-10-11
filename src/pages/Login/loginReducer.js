@@ -45,6 +45,8 @@ export default (state = INITIAL_STATE, action) => {
     case globalActions.LOGGED_OUT:
       return {
         ...state,
+        userName : "",
+        password : "",
         loggingIn : false,
         loggedIn: false,
         loginFailed : false,

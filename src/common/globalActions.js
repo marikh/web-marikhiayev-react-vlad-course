@@ -41,6 +41,8 @@ export const loginAction = () => (dispatch, getState) => {
 
 export const logOut = () => (dispatch, getState) => {
     dispatch(loggingOutAction());
+    const loginServce = new loginService();
+    loginServce.logOut();
     dispatch(loggedOutAction());
 }
 

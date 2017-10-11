@@ -54,8 +54,7 @@ storiesOf("Menu", module)
 
     return <Provider store={store}>
                 <MemoryRouter>
-                    <Menu menuConfig={{ menuState : true, open: () => {}, socialLinks:socialLinks}}
-                        showProtectedLinks={true}/>
+                    <Menu menuConfig={{ menuState : true, open: () => {}, socialLinks:socialLinks}}/>
                     </MemoryRouter>
             </Provider>
   })

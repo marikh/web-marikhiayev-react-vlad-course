@@ -1,5 +1,5 @@
 import { globalActions, loginAction,userLoggingInAction,
-loginFailedAction,userLoggedInAction } from '../common/globalActions'
+loginFailedAction,userLoggedInAction, logOut,loggedOutAction,loggingOutAction } from '../common/globalActions'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { delay, makeAwaitable } from '../common/Extensions/promises'
@@ -84,4 +84,42 @@ describe('Login actions',()=>{
 
         expect(loginFailedAct).toEqual(expectedAction)
     })
+
+    
+    it('logOut', () => {
+        const expectedActions = [
+        { type: globalActions.LOGGING_OUT },
+        { type: globalActions.LOGGED_OUT }
+        ]
+
+        const middlewares = [thunk];
+        const mockStore = configureMockStore(middlewares);
+        const store = mockStore({ });
+        
+        store.dispatch(logOut());
+        expect(store.getActions()).toEqual(expectedActions);
+    })
+
+    it('loggingOutAction', () => {
+        
+        const loggingOutAct = loggingOutAction();
+
+        const expectedAction = {
+            type: "LOGGING_OUT"
+        };
+
+        expect(loggingOutAct).toEqual(expectedAction)
+    })
+
+    it('loggedOutAction', () => {
+        
+        const loggedOutAct = loggedOutAction();
+
+        const expectedAction = {
+            type: "LOGGED_OUT"
+        };
+
+        expect(loggedOutAct).toEqual(expectedAction)
+    })
+
 })

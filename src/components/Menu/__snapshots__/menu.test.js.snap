@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu snapshot tests test weird snapshot 1`] = `
+<div
+  className="App-menubar"
+>
+  <label
+    className="hamburger-icon fa fa-bars"
+    onClick={[Function]}
+  />
+  <div
+    className="menu-content opened"
+  >
+    <div
+      className="links-container"
+    >
+      <a
+        className="page-link"
+        href="/"
+        onClick={[Function]}
+      >
+        <span>
+          Home
+        </span>
+      </a>
+      <a
+        className="page-link"
+        href="/about"
+        onClick={[Function]}
+      >
+        <span>
+          About
+        </span>
+      </a>
+      <a
+        className="page-link"
+        href="/products"
+        onClick={[Function]}
+      >
+        <span>
+          Products
+        </span>
+      </a>
+      <a
+        className="page-link"
+        href="/contact"
+        onClick={[Function]}
+      >
+        <span>
+          Contact
+        </span>
+      </a>
+      <a
+        className="page-link"
+        href="/login"
+        onClick={[Function]}
+      >
+        <span>
+          SignIn
+        </span>
+      </a>
+    </div>
+    <div
+      className="socialLinks"
+    >
+      <div
+        className="social-links"
+      >
+        <a
+          className="fa fa-facebook"
+          href="facebook.com"
+          target="_blank"
+        />
+        <a
+          className="fa fa-github"
+          href="github.com"
+          target="_blank"
+        />
+        <a
+          className="fa fa-envelope"
+          href="vnovick@gmail.comm"
+          target="_blank"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="overlay active"
+  />
+</div>
+`;
