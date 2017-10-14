@@ -12,7 +12,9 @@
   height: 80px;
 } */
 
-
+.rtl{
+    direction: rtl;
+}
 
 .App-intro {
   /* font-size: large; */

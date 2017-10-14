@@ -39,7 +39,7 @@ export const Menu = ({ children, menuConfig: { menuState, open, socialLinks }, s
 <div className="App-menubar">
         <label className="hamburger-icon fa fa-bars" onClick={() => open()}/>
         <div className={classNames(['menu-content', menuState && 'opened' ])}>
-            <div className="links-container">
+            <div className={classNames(["links-container", T.translate("LangDirection") === "rtl" && "rtl"])}>
                 { navigationLinks.map(({ name, path }, index) => { 
                         if(path == '/login' && showProtectedLinks)
                             return;

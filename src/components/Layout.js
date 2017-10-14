@@ -8,6 +8,7 @@ import {
 
 import { Route } from 'react-router-dom';
 import classNames from 'classnames';
+import T from 'i18n-react';
 
 const socialLinks = [
   {
@@ -64,10 +65,10 @@ export default class Layout extends React.Component {
              <Header menuConfig={{ menuState, open, socialLinks }}>
                   { HeroArea && <HeroArea links={socialLinks}/> }
               </Header>
-              <Body>
+              <Body className={classNames([T.translate("LangDirection") === "rtl" && "rtl"])}>
                   { children }
               </Body>
-              <Footer>
+              <Footer className={classNames([T.translate("LangDirection") === "rtl" && "rtl"])}>
                   { FooterContent ? <FooterContent links={socialLinks}/> : <SocialLinks links={socialLinks} />} 
               </Footer>
         </div>
